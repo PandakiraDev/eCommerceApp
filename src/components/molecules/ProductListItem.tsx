@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "next/navigation";
 import { type ProductItemType } from "../types";
 import { ProductCoverImage } from "@/components/atoms/ProductCoverImage";
 import { ProductListItemDescription } from "@/components/atoms/ProductListItemDescription";
