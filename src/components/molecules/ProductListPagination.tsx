@@ -1,15 +1,15 @@
 import { notFound } from "next/navigation";
 import { ActiveLink } from "../atoms/ActiveLink";
-import { getProductsCountRecursive } from "@/api/products";
+import { getTotalCountOfProducts } from "@/api/products";
 
 type Props = {
   pageNumber: string;
 };
 
 export const Pagination = async ({ pageNumber }: Props) => {
-  const products = await getProductsCountRecursive();
+  const products = await getTotalCountOfProducts();
 
-  const pages = Math.ceil(products / 20);
+  const pages = Math.ceil(products / 10);
 
   console.log(pages);
   let leftPagination = Number(pageNumber) - 1;

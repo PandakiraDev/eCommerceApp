@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { getProductById } from "@/api/products";
 import { SuggestedProductsList } from "@/components/organisms/SuggestedProducts";
 import { formatMoney } from "@/utils";
+import { type ProductListItemFragmentFragment } from "@/gql/graphql";
 
 // export const generateStaticParams = async () => {
 //   const products = await getProductsList();
@@ -18,18 +19,15 @@ export const generateMetadata = async ({
 }: {
   params: { productId: string };
 }): Promise<Metadata> => {
-  const product = await getProductById(params.productId);
+  const product = (await getProductById(
+    params.productId
+  )) as ProductListItemFragmentFragment;
   return {
     title: `${product.name} - Sklep internetowy`,
     description: product.description,
     openGraph: {
       title: `${product.name} - Sklep internetowy`,
       description: product.description,
-      images: [
-        {
-          url: product.coverImage.src,
-        },
-      ],
     },
   };
 };
@@ -39,7 +37,9 @@ export default async function SingleProductPage({
 }: {
   params: { productId: string };
 }) {
-  const product = await getProductById(params.productId);
+  const product = (await getProductById(
+    params.productId
+  )) as ProductListItemFragmentFragment;
 
   return (
     <>
@@ -51,8 +51,8 @@ export default async function SingleProductPage({
                 <img
                   width={250}
                   // height={320}
-                  alt={product.coverImage.alt}
-                  src={product.coverImage.src}
+                  alt={product.name}
+                  src={product.images[0]?.url}
                   // className="h-full w-full object-cover object-center p-4 transition-transform hover:scale-105"
                 />
               </div>
@@ -62,7 +62,7 @@ export default async function SingleProductPage({
             <div className="p-4 bg-slate-100 ">
               <div className="mt-4 mb-3">
                 <span className="uppercase text-slate-400 text-sm">
-                  {product.category}
+                  {product.categories[0]?.name}
                 </span>
                 <h1 className="uppercase text-2xl">{product.name}</h1>
                 <div className="flex flex-row items-center">
@@ -81,7 +81,7 @@ export default async function SingleProductPage({
       </article>
       <aside className="text-center">
         <Suspense fallback={"Ładowanie..."}>
-          <SuggestedProductsList />
+          <SuggestedProductsList productId={params.productId} />
         </Suspense>
       </aside>
     </>

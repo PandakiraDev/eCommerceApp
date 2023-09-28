@@ -1,11 +1,17 @@
 import { ProductList } from "./ProductList";
-import { getProductsList } from "@/api/products";
+import { ProductListItemFragmentFragment } from "@/gql/graphql";
+
+import { getSuggestedProductsByProductId } from "@/api/products";
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
-export const SuggestedProductsList = async () => {
-  const pageNumber = "1";
-  const products = await getProductsList(pageNumber);
+export const SuggestedProductsList = async ({
+  productId,
+}: {
+  productId: string;
+}) => {
+  const products = await getSuggestedProductsByProductId(productId);
+
   await sleep(5000);
-  return <ProductList products={products.slice(-4)} />;
+  return <ProductList data-testid="related-products" products={products} />;
 };

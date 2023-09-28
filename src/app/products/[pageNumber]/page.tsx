@@ -1,6 +1,7 @@
-import { getProductsCountRecursive, getProductsList } from "@/api/products";
+import { getProductsList, getTotalCountOfProducts } from "@/api/products";
 import { ProductList } from "@/components/organisms/ProductList";
 import { Pagination } from "@/components/molecules/ProductListPagination";
+import type { ProductListItemFragmentFragment } from "@/gql/graphql";
 
 // const products: ProductItemType[] = [
 //   {
@@ -52,8 +53,10 @@ type Props = {
 };
 
 const ProductsPage = async ({ params: { pageNumber } }: Props) => {
-  const products = await getProductsList(pageNumber);
-  console.log(pageNumber);
+  const products = (await getProductsList(
+    pageNumber
+  )) as ProductListItemFragmentFragment[];
+  // console.log(pageNumber);
   return (
     <>
       <ProductList products={products} />
@@ -64,8 +67,8 @@ const ProductsPage = async ({ params: { pageNumber } }: Props) => {
 export default ProductsPage;
 
 export const generateStaticParams = async () => {
-  const productsTotalCount = await getProductsCountRecursive();
-  const pages = Math.ceil(productsTotalCount / 20);
+  const productsTotalCount = await getTotalCountOfProducts();
+  const pages = Math.ceil(productsTotalCount / 10);
   return Array.from({ length: pages }).map((_, index) => ({
     pageNumber: String(index + 1),
   }));

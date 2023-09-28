@@ -1,0 +1,11 @@
+query SuggestedProductsGetByProductId($productId: ID!) {
+  products(where: { id: $productId }) {
+    name
+    categories {
+      slug
+      products(first: 4) {
+        ...ProductListItemFragment
+      }
+    }
+  }
+}
