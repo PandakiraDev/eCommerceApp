@@ -1,5 +1,4 @@
 import { ProductList } from "./ProductList";
-import { ProductListItemFragmentFragment } from "@/gql/graphql";
 
 import { getSuggestedProductsByProductId } from "@/api/products";
 
@@ -12,6 +11,15 @@ export const SuggestedProductsList = async ({
 }) => {
   const products = await getSuggestedProductsByProductId(productId);
 
+  console.log("products =>", products[0]?.categories[0]?.products, productId);
+
+  if (!products[0]?.categories[0]?.products) return null;
+
   await sleep(5000);
-  return <ProductList data-testid="related-products" products={products} />;
+  return (
+    <ProductList
+      data-testid="related-products"
+      products={products[0]?.categories[0].products}
+    />
+  );
 };
