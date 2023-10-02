@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import { getProductsList } from "@/api/products";
 import { ActiveLink } from "@/components/atoms/ActiveLink";
 // import { Pagination } from "@/components/molecules/ProductListPagination";
@@ -10,6 +11,9 @@ const ProductsPage = async () => {
     0,
     4
   ) as ProductListItemFragmentFragment[];
+  if (!products) {
+    notFound();
+  }
   return (
     <>
       <ProductList products={products} />

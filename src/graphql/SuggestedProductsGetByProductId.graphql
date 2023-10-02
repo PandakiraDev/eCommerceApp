@@ -3,7 +3,7 @@ query SuggestedProductsGetByProductId($productId: ID!) {
     name
     categories {
       slug
-      products(first: 4) {
+      products(where: { NOT: { id: $productId } }, first: 4) {
         ...ProductListItemFragment
       }
     }

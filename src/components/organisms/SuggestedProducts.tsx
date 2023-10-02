@@ -14,7 +14,9 @@ export const SuggestedProductsList = async ({
   console.log("products =>", products[0]?.categories[0]?.products, productId);
 
   if (!products[0]?.categories[0]?.products) return null;
-
+  console.log(products[0]?.categories[0]?.products.length);
+  if (products[0]?.categories[0]?.products.length === 0)
+    return <p>There is no related products.</p>;
   await sleep(5000);
   return (
     <ProductList

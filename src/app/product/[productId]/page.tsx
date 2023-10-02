@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import { notFound } from "next/navigation";
 import { getProductById } from "@/api/products";
 import { SuggestedProductsList } from "@/components/organisms/SuggestedProducts";
 import { formatMoney } from "@/utils";
@@ -37,9 +38,12 @@ export default async function SingleProductPage({
 }: {
   params: { productId: string };
 }) {
-  const product = (await getProductById(
-    params.productId
-  )) as ProductListItemFragmentFragment;
+  const product = await getProductById(params.productId);
+  if (!product) {
+    notFound();
+  }
+
+  // console.log(product.variants[0].id);
 
   return (
     <>
@@ -67,6 +71,50 @@ export default async function SingleProductPage({
                 <h1 className="uppercase text-2xl">{product.name}</h1>
                 <div className="flex flex-row items-center">
                   {formatMoney(product.price / 100)}
+                </div>
+                <div className="inline">
+                  <ul>
+                    <li className="inline">
+                      <input
+                        type="radio"
+                        name="color"
+                        checked
+                        className="accent-red-600"
+                      />
+                    </li>
+                    <li className="inline">
+                      <input
+                        type="radio"
+                        name="color"
+                        className="accent-pink-500"
+                      />
+                    </li>
+                    <li className="inline">
+                      <input
+                        type="radio"
+                        name="color"
+                        className="accent-purple-700"
+                      />
+                    </li>
+                  </ul>
+                  <ul>
+                    <li className="inline">
+                      <input type="radio" name="size" id="size1" checked />
+                      <label>Small</label>
+                    </li>
+                    <li className="inline">
+                      <input type="radio" name="size" id="size1" />
+                      <label>Medium</label>
+                    </li>
+                    <li className="inline">
+                      <input type="radio" name="size" id="size1" />
+                      <label>Large</label>
+                    </li>
+                    <li className="inline">
+                      <input type="radio" name="size" id="size1" />
+                      <label>XL</label>
+                    </li>
+                  </ul>
                 </div>
               </div>
               <p className="text-sm">{product.description}</p>

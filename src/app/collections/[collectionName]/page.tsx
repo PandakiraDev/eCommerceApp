@@ -1,16 +1,13 @@
 import { notFound } from "next/navigation";
 import { ProductList } from "@/components/organisms/ProductList";
 import { getProductsByCollectionSlug } from "@/api/products";
-import type { ProductListItemFragmentFragment } from "@/gql/graphql";
 
 const CollectionsPage = async ({
   params,
 }: {
   params: { collectionName: string };
 }) => {
-  const products = (await getProductsByCollectionSlug(
-    params.collectionName
-  )) as ProductListItemFragmentFragment[];
+  const products = await getProductsByCollectionSlug(params.collectionName);
 
   if (!products) {
     throw notFound();

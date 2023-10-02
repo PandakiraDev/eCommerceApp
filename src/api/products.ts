@@ -9,7 +9,7 @@ import {
 } from "@/gql/graphql";
 
 export const getProductsList = async (pageNumber: string) => {
-  const take = 10;
+  const take = 5;
   const offset = (Number(pageNumber) - 1) * take;
   // 1*20 - 20 = 0 (page 1)
   // 2*20 - 20 = 20 (page 2)
