@@ -25,7 +25,7 @@ export const Pagination = async ({ pageNumber }: Props) => {
     notFound();
   }
   return (
-    <div className="flex justify-center mt-7">
+    <div className="flex justify-center mt-7" aria-label="pagination">
       <ul className="flex flex-row space-x-4">
         {Number(pageNumber) >= 2 ? (
           <li>
