@@ -11,7 +11,8 @@ export const Pagination = async ({ pageNumber }: Props) => {
 
   const pages = Math.ceil(products / 5);
 
-  console.log(pages);
+  // console.log(pages);
+  // console.log(pageNumber);
   // let leftPagination = Number(pageNumber) - 1;
   // let rightPagination = Number(pageNumber) + 1;
   // let centerPagination = Number(pageNumber);

@@ -1,5 +1,9 @@
-query ProductsGetList($first: Int, $skip: Int) {
-  products(first: $first, skip: $skip) {
+query ProductsGetBySearch($first: Int, $skip: Int, $nameContains: String) {
+  products(
+    first: $first
+    skip: $skip
+    where: { name_contains: $nameContains }
+  ) {
     id
     name
     description

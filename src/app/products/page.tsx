@@ -3,14 +3,10 @@ import { getProductsList } from "@/api/products";
 import { ActiveLink } from "@/components/atoms/ActiveLink";
 // import { Pagination } from "@/components/molecules/ProductListPagination";
 import { ProductList } from "@/components/organisms/ProductList";
-import type { ProductListItemFragmentFragment } from "@/gql/graphql";
 
 const ProductsPage = async () => {
   const pageNumber = "1";
-  const products = (await getProductsList(pageNumber)).slice(
-    0,
-    4
-  ) as ProductListItemFragmentFragment[];
+  const products = (await getProductsList(pageNumber)).slice(0, 4);
   if (!products) {
     notFound();
   }

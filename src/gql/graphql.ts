@@ -2516,16 +2516,14 @@ export type Mutation = {
   createOrderItem?: Maybe<OrderItem>;
   /** Create one product */
   createProduct?: Maybe<Product>;
-  /** Create one productColorVariant */
-  createProductColorVariant?: Maybe<ProductColorVariant>;
-  /** Create one productSizeColorVariant */
-  createProductSizeColorVariant?: Maybe<ProductSizeColorVariant>;
-  /** Create one productSizeVariant */
-  createProductSizeVariant?: Maybe<ProductSizeVariant>;
   /** Create one review */
   createReview?: Maybe<Review>;
   /** Create one scheduledRelease */
   createScheduledRelease?: Maybe<ScheduledRelease>;
+  /** Create one sku */
+  createSku?: Maybe<Sku>;
+  /** Create one variant */
+  createVariant?: Maybe<Variant>;
   /** Delete one asset from _all_ existing stages. Returns deleted document. */
   deleteAsset?: Maybe<Asset>;
   /** Delete one category from _all_ existing stages. Returns deleted document. */
@@ -2577,27 +2575,6 @@ export type Mutation = {
   /** Delete many Order documents, return deleted documents */
   deleteManyOrdersConnection: OrderConnection;
   /**
-   * Delete many ProductColorVariant documents
-   * @deprecated Please use the new paginated many mutation (deleteManyProductColorVariantsConnection)
-   */
-  deleteManyProductColorVariants: BatchPayload;
-  /** Delete many ProductColorVariant documents, return deleted documents */
-  deleteManyProductColorVariantsConnection: ProductColorVariantConnection;
-  /**
-   * Delete many ProductSizeColorVariant documents
-   * @deprecated Please use the new paginated many mutation (deleteManyProductSizeColorVariantsConnection)
-   */
-  deleteManyProductSizeColorVariants: BatchPayload;
-  /** Delete many ProductSizeColorVariant documents, return deleted documents */
-  deleteManyProductSizeColorVariantsConnection: ProductSizeColorVariantConnection;
-  /**
-   * Delete many ProductSizeVariant documents
-   * @deprecated Please use the new paginated many mutation (deleteManyProductSizeVariantsConnection)
-   */
-  deleteManyProductSizeVariants: BatchPayload;
-  /** Delete many ProductSizeVariant documents, return deleted documents */
-  deleteManyProductSizeVariantsConnection: ProductSizeVariantConnection;
-  /**
    * Delete many Product documents
    * @deprecated Please use the new paginated many mutation (deleteManyProductsConnection)
    */
@@ -2611,24 +2588,36 @@ export type Mutation = {
   deleteManyReviews: BatchPayload;
   /** Delete many Review documents, return deleted documents */
   deleteManyReviewsConnection: ReviewConnection;
+  /**
+   * Delete many Sku documents
+   * @deprecated Please use the new paginated many mutation (deleteManySkusConnection)
+   */
+  deleteManySkus: BatchPayload;
+  /** Delete many Sku documents, return deleted documents */
+  deleteManySkusConnection: SkuConnection;
+  /**
+   * Delete many Variant documents
+   * @deprecated Please use the new paginated many mutation (deleteManyVariantsConnection)
+   */
+  deleteManyVariants: BatchPayload;
+  /** Delete many Variant documents, return deleted documents */
+  deleteManyVariantsConnection: VariantConnection;
   /** Delete one order from _all_ existing stages. Returns deleted document. */
   deleteOrder?: Maybe<Order>;
   /** Delete one orderItem from _all_ existing stages. Returns deleted document. */
   deleteOrderItem?: Maybe<OrderItem>;
   /** Delete one product from _all_ existing stages. Returns deleted document. */
   deleteProduct?: Maybe<Product>;
-  /** Delete one productColorVariant from _all_ existing stages. Returns deleted document. */
-  deleteProductColorVariant?: Maybe<ProductColorVariant>;
-  /** Delete one productSizeColorVariant from _all_ existing stages. Returns deleted document. */
-  deleteProductSizeColorVariant?: Maybe<ProductSizeColorVariant>;
-  /** Delete one productSizeVariant from _all_ existing stages. Returns deleted document. */
-  deleteProductSizeVariant?: Maybe<ProductSizeVariant>;
   /** Delete one review from _all_ existing stages. Returns deleted document. */
   deleteReview?: Maybe<Review>;
   /** Delete and return scheduled operation */
   deleteScheduledOperation?: Maybe<ScheduledOperation>;
   /** Delete one scheduledRelease from _all_ existing stages. Returns deleted document. */
   deleteScheduledRelease?: Maybe<ScheduledRelease>;
+  /** Delete one sku from _all_ existing stages. Returns deleted document. */
+  deleteSku?: Maybe<Sku>;
+  /** Delete one variant from _all_ existing stages. Returns deleted document. */
+  deleteVariant?: Maybe<Variant>;
   /** Publish one asset */
   publishAsset?: Maybe<Asset>;
   /** Publish one category */
@@ -2680,27 +2669,6 @@ export type Mutation = {
   /** Publish many Order documents */
   publishManyOrdersConnection: OrderConnection;
   /**
-   * Publish many ProductColorVariant documents
-   * @deprecated Please use the new paginated many mutation (publishManyProductColorVariantsConnection)
-   */
-  publishManyProductColorVariants: BatchPayload;
-  /** Publish many ProductColorVariant documents */
-  publishManyProductColorVariantsConnection: ProductColorVariantConnection;
-  /**
-   * Publish many ProductSizeColorVariant documents
-   * @deprecated Please use the new paginated many mutation (publishManyProductSizeColorVariantsConnection)
-   */
-  publishManyProductSizeColorVariants: BatchPayload;
-  /** Publish many ProductSizeColorVariant documents */
-  publishManyProductSizeColorVariantsConnection: ProductSizeColorVariantConnection;
-  /**
-   * Publish many ProductSizeVariant documents
-   * @deprecated Please use the new paginated many mutation (publishManyProductSizeVariantsConnection)
-   */
-  publishManyProductSizeVariants: BatchPayload;
-  /** Publish many ProductSizeVariant documents */
-  publishManyProductSizeVariantsConnection: ProductSizeVariantConnection;
-  /**
    * Publish many Product documents
    * @deprecated Please use the new paginated many mutation (publishManyProductsConnection)
    */
@@ -2714,20 +2682,32 @@ export type Mutation = {
   publishManyReviews: BatchPayload;
   /** Publish many Review documents */
   publishManyReviewsConnection: ReviewConnection;
+  /**
+   * Publish many Sku documents
+   * @deprecated Please use the new paginated many mutation (publishManySkusConnection)
+   */
+  publishManySkus: BatchPayload;
+  /** Publish many Sku documents */
+  publishManySkusConnection: SkuConnection;
+  /**
+   * Publish many Variant documents
+   * @deprecated Please use the new paginated many mutation (publishManyVariantsConnection)
+   */
+  publishManyVariants: BatchPayload;
+  /** Publish many Variant documents */
+  publishManyVariantsConnection: VariantConnection;
   /** Publish one order */
   publishOrder?: Maybe<Order>;
   /** Publish one orderItem */
   publishOrderItem?: Maybe<OrderItem>;
   /** Publish one product */
   publishProduct?: Maybe<Product>;
-  /** Publish one productColorVariant */
-  publishProductColorVariant?: Maybe<ProductColorVariant>;
-  /** Publish one productSizeColorVariant */
-  publishProductSizeColorVariant?: Maybe<ProductSizeColorVariant>;
-  /** Publish one productSizeVariant */
-  publishProductSizeVariant?: Maybe<ProductSizeVariant>;
   /** Publish one review */
   publishReview?: Maybe<Review>;
+  /** Publish one sku */
+  publishSku?: Maybe<Sku>;
+  /** Publish one variant */
+  publishVariant?: Maybe<Variant>;
   /** Schedule to publish one asset */
   schedulePublishAsset?: Maybe<Asset>;
   /** Schedule to publish one category */
@@ -2742,14 +2722,12 @@ export type Mutation = {
   schedulePublishOrderItem?: Maybe<OrderItem>;
   /** Schedule to publish one product */
   schedulePublishProduct?: Maybe<Product>;
-  /** Schedule to publish one productColorVariant */
-  schedulePublishProductColorVariant?: Maybe<ProductColorVariant>;
-  /** Schedule to publish one productSizeColorVariant */
-  schedulePublishProductSizeColorVariant?: Maybe<ProductSizeColorVariant>;
-  /** Schedule to publish one productSizeVariant */
-  schedulePublishProductSizeVariant?: Maybe<ProductSizeVariant>;
   /** Schedule to publish one review */
   schedulePublishReview?: Maybe<Review>;
+  /** Schedule to publish one sku */
+  schedulePublishSku?: Maybe<Sku>;
+  /** Schedule to publish one variant */
+  schedulePublishVariant?: Maybe<Variant>;
   /** Unpublish one asset from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
   scheduleUnpublishAsset?: Maybe<Asset>;
   /** Unpublish one category from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
@@ -2764,14 +2742,12 @@ export type Mutation = {
   scheduleUnpublishOrderItem?: Maybe<OrderItem>;
   /** Unpublish one product from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
   scheduleUnpublishProduct?: Maybe<Product>;
-  /** Unpublish one productColorVariant from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
-  scheduleUnpublishProductColorVariant?: Maybe<ProductColorVariant>;
-  /** Unpublish one productSizeColorVariant from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
-  scheduleUnpublishProductSizeColorVariant?: Maybe<ProductSizeColorVariant>;
-  /** Unpublish one productSizeVariant from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
-  scheduleUnpublishProductSizeVariant?: Maybe<ProductSizeVariant>;
   /** Unpublish one review from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
   scheduleUnpublishReview?: Maybe<Review>;
+  /** Unpublish one sku from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
+  scheduleUnpublishSku?: Maybe<Sku>;
+  /** Unpublish one variant from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
+  scheduleUnpublishVariant?: Maybe<Variant>;
   /** Unpublish one asset from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
   unpublishAsset?: Maybe<Asset>;
   /** Unpublish one category from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
@@ -2823,27 +2799,6 @@ export type Mutation = {
   /** Find many Order documents that match criteria in specified stage and unpublish from target stages */
   unpublishManyOrdersConnection: OrderConnection;
   /**
-   * Unpublish many ProductColorVariant documents
-   * @deprecated Please use the new paginated many mutation (unpublishManyProductColorVariantsConnection)
-   */
-  unpublishManyProductColorVariants: BatchPayload;
-  /** Find many ProductColorVariant documents that match criteria in specified stage and unpublish from target stages */
-  unpublishManyProductColorVariantsConnection: ProductColorVariantConnection;
-  /**
-   * Unpublish many ProductSizeColorVariant documents
-   * @deprecated Please use the new paginated many mutation (unpublishManyProductSizeColorVariantsConnection)
-   */
-  unpublishManyProductSizeColorVariants: BatchPayload;
-  /** Find many ProductSizeColorVariant documents that match criteria in specified stage and unpublish from target stages */
-  unpublishManyProductSizeColorVariantsConnection: ProductSizeColorVariantConnection;
-  /**
-   * Unpublish many ProductSizeVariant documents
-   * @deprecated Please use the new paginated many mutation (unpublishManyProductSizeVariantsConnection)
-   */
-  unpublishManyProductSizeVariants: BatchPayload;
-  /** Find many ProductSizeVariant documents that match criteria in specified stage and unpublish from target stages */
-  unpublishManyProductSizeVariantsConnection: ProductSizeVariantConnection;
-  /**
    * Unpublish many Product documents
    * @deprecated Please use the new paginated many mutation (unpublishManyProductsConnection)
    */
@@ -2857,20 +2812,32 @@ export type Mutation = {
   unpublishManyReviews: BatchPayload;
   /** Find many Review documents that match criteria in specified stage and unpublish from target stages */
   unpublishManyReviewsConnection: ReviewConnection;
+  /**
+   * Unpublish many Sku documents
+   * @deprecated Please use the new paginated many mutation (unpublishManySkusConnection)
+   */
+  unpublishManySkus: BatchPayload;
+  /** Find many Sku documents that match criteria in specified stage and unpublish from target stages */
+  unpublishManySkusConnection: SkuConnection;
+  /**
+   * Unpublish many Variant documents
+   * @deprecated Please use the new paginated many mutation (unpublishManyVariantsConnection)
+   */
+  unpublishManyVariants: BatchPayload;
+  /** Find many Variant documents that match criteria in specified stage and unpublish from target stages */
+  unpublishManyVariantsConnection: VariantConnection;
   /** Unpublish one order from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
   unpublishOrder?: Maybe<Order>;
   /** Unpublish one orderItem from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
   unpublishOrderItem?: Maybe<OrderItem>;
   /** Unpublish one product from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
   unpublishProduct?: Maybe<Product>;
-  /** Unpublish one productColorVariant from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
-  unpublishProductColorVariant?: Maybe<ProductColorVariant>;
-  /** Unpublish one productSizeColorVariant from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
-  unpublishProductSizeColorVariant?: Maybe<ProductSizeColorVariant>;
-  /** Unpublish one productSizeVariant from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
-  unpublishProductSizeVariant?: Maybe<ProductSizeVariant>;
   /** Unpublish one review from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
   unpublishReview?: Maybe<Review>;
+  /** Unpublish one sku from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
+  unpublishSku?: Maybe<Sku>;
+  /** Unpublish one variant from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
+  unpublishVariant?: Maybe<Variant>;
   /** Update one asset */
   updateAsset?: Maybe<Asset>;
   /** Update one category */
@@ -2922,27 +2889,6 @@ export type Mutation = {
   /** Update many Order documents */
   updateManyOrdersConnection: OrderConnection;
   /**
-   * Update many productColorVariants
-   * @deprecated Please use the new paginated many mutation (updateManyProductColorVariantsConnection)
-   */
-  updateManyProductColorVariants: BatchPayload;
-  /** Update many ProductColorVariant documents */
-  updateManyProductColorVariantsConnection: ProductColorVariantConnection;
-  /**
-   * Update many productSizeColorVariants
-   * @deprecated Please use the new paginated many mutation (updateManyProductSizeColorVariantsConnection)
-   */
-  updateManyProductSizeColorVariants: BatchPayload;
-  /** Update many ProductSizeColorVariant documents */
-  updateManyProductSizeColorVariantsConnection: ProductSizeColorVariantConnection;
-  /**
-   * Update many productSizeVariants
-   * @deprecated Please use the new paginated many mutation (updateManyProductSizeVariantsConnection)
-   */
-  updateManyProductSizeVariants: BatchPayload;
-  /** Update many ProductSizeVariant documents */
-  updateManyProductSizeVariantsConnection: ProductSizeVariantConnection;
-  /**
    * Update many products
    * @deprecated Please use the new paginated many mutation (updateManyProductsConnection)
    */
@@ -2956,22 +2902,34 @@ export type Mutation = {
   updateManyReviews: BatchPayload;
   /** Update many Review documents */
   updateManyReviewsConnection: ReviewConnection;
+  /**
+   * Update many skus
+   * @deprecated Please use the new paginated many mutation (updateManySkusConnection)
+   */
+  updateManySkus: BatchPayload;
+  /** Update many Sku documents */
+  updateManySkusConnection: SkuConnection;
+  /**
+   * Update many variants
+   * @deprecated Please use the new paginated many mutation (updateManyVariantsConnection)
+   */
+  updateManyVariants: BatchPayload;
+  /** Update many Variant documents */
+  updateManyVariantsConnection: VariantConnection;
   /** Update one order */
   updateOrder?: Maybe<Order>;
   /** Update one orderItem */
   updateOrderItem?: Maybe<OrderItem>;
   /** Update one product */
   updateProduct?: Maybe<Product>;
-  /** Update one productColorVariant */
-  updateProductColorVariant?: Maybe<ProductColorVariant>;
-  /** Update one productSizeColorVariant */
-  updateProductSizeColorVariant?: Maybe<ProductSizeColorVariant>;
-  /** Update one productSizeVariant */
-  updateProductSizeVariant?: Maybe<ProductSizeVariant>;
   /** Update one review */
   updateReview?: Maybe<Review>;
   /** Update one scheduledRelease */
   updateScheduledRelease?: Maybe<ScheduledRelease>;
+  /** Update one sku */
+  updateSku?: Maybe<Sku>;
+  /** Update one variant */
+  updateVariant?: Maybe<Variant>;
   /** Upsert one asset */
   upsertAsset?: Maybe<Asset>;
   /** Upsert one category */
@@ -2986,14 +2944,12 @@ export type Mutation = {
   upsertOrderItem?: Maybe<OrderItem>;
   /** Upsert one product */
   upsertProduct?: Maybe<Product>;
-  /** Upsert one productColorVariant */
-  upsertProductColorVariant?: Maybe<ProductColorVariant>;
-  /** Upsert one productSizeColorVariant */
-  upsertProductSizeColorVariant?: Maybe<ProductSizeColorVariant>;
-  /** Upsert one productSizeVariant */
-  upsertProductSizeVariant?: Maybe<ProductSizeVariant>;
   /** Upsert one review */
   upsertReview?: Maybe<Review>;
+  /** Upsert one sku */
+  upsertSku?: Maybe<Sku>;
+  /** Upsert one variant */
+  upsertVariant?: Maybe<Variant>;
 };
 
 
@@ -3032,21 +2988,6 @@ export type MutationCreateProductArgs = {
 };
 
 
-export type MutationCreateProductColorVariantArgs = {
-  data: ProductColorVariantCreateInput;
-};
-
-
-export type MutationCreateProductSizeColorVariantArgs = {
-  data: ProductSizeColorVariantCreateInput;
-};
-
-
-export type MutationCreateProductSizeVariantArgs = {
-  data: ProductSizeVariantCreateInput;
-};
-
-
 export type MutationCreateReviewArgs = {
   data: ReviewCreateInput;
 };
@@ -3054,6 +2995,16 @@ export type MutationCreateReviewArgs = {
 
 export type MutationCreateScheduledReleaseArgs = {
   data: ScheduledReleaseCreateInput;
+};
+
+
+export type MutationCreateSkuArgs = {
+  data: SkuCreateInput;
+};
+
+
+export type MutationCreateVariantArgs = {
+  data: VariantCreateInput;
 };
 
 
@@ -3167,51 +3118,6 @@ export type MutationDeleteManyOrdersConnectionArgs = {
 };
 
 
-export type MutationDeleteManyProductColorVariantsArgs = {
-  where?: InputMaybe<ProductColorVariantManyWhereInput>;
-};
-
-
-export type MutationDeleteManyProductColorVariantsConnectionArgs = {
-  after?: InputMaybe<Scalars['ID']['input']>;
-  before?: InputMaybe<Scalars['ID']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  last?: InputMaybe<Scalars['Int']['input']>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  where?: InputMaybe<ProductColorVariantManyWhereInput>;
-};
-
-
-export type MutationDeleteManyProductSizeColorVariantsArgs = {
-  where?: InputMaybe<ProductSizeColorVariantManyWhereInput>;
-};
-
-
-export type MutationDeleteManyProductSizeColorVariantsConnectionArgs = {
-  after?: InputMaybe<Scalars['ID']['input']>;
-  before?: InputMaybe<Scalars['ID']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  last?: InputMaybe<Scalars['Int']['input']>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  where?: InputMaybe<ProductSizeColorVariantManyWhereInput>;
-};
-
-
-export type MutationDeleteManyProductSizeVariantsArgs = {
-  where?: InputMaybe<ProductSizeVariantManyWhereInput>;
-};
-
-
-export type MutationDeleteManyProductSizeVariantsConnectionArgs = {
-  after?: InputMaybe<Scalars['ID']['input']>;
-  before?: InputMaybe<Scalars['ID']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  last?: InputMaybe<Scalars['Int']['input']>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  where?: InputMaybe<ProductSizeVariantManyWhereInput>;
-};
-
-
 export type MutationDeleteManyProductsArgs = {
   where?: InputMaybe<ProductManyWhereInput>;
 };
@@ -3242,6 +3148,36 @@ export type MutationDeleteManyReviewsConnectionArgs = {
 };
 
 
+export type MutationDeleteManySkusArgs = {
+  where?: InputMaybe<SkuManyWhereInput>;
+};
+
+
+export type MutationDeleteManySkusConnectionArgs = {
+  after?: InputMaybe<Scalars['ID']['input']>;
+  before?: InputMaybe<Scalars['ID']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<SkuManyWhereInput>;
+};
+
+
+export type MutationDeleteManyVariantsArgs = {
+  where?: InputMaybe<VariantManyWhereInput>;
+};
+
+
+export type MutationDeleteManyVariantsConnectionArgs = {
+  after?: InputMaybe<Scalars['ID']['input']>;
+  before?: InputMaybe<Scalars['ID']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<VariantManyWhereInput>;
+};
+
+
 export type MutationDeleteOrderArgs = {
   where: OrderWhereUniqueInput;
 };
@@ -3257,21 +3193,6 @@ export type MutationDeleteProductArgs = {
 };
 
 
-export type MutationDeleteProductColorVariantArgs = {
-  where: ProductColorVariantWhereUniqueInput;
-};
-
-
-export type MutationDeleteProductSizeColorVariantArgs = {
-  where: ProductSizeColorVariantWhereUniqueInput;
-};
-
-
-export type MutationDeleteProductSizeVariantArgs = {
-  where: ProductSizeVariantWhereUniqueInput;
-};
-
-
 export type MutationDeleteReviewArgs = {
   where: ReviewWhereUniqueInput;
 };
@@ -3284,6 +3205,16 @@ export type MutationDeleteScheduledOperationArgs = {
 
 export type MutationDeleteScheduledReleaseArgs = {
   where: ScheduledReleaseWhereUniqueInput;
+};
+
+
+export type MutationDeleteSkuArgs = {
+  where: SkuWhereUniqueInput;
+};
+
+
+export type MutationDeleteVariantArgs = {
+  where: VariantWhereUniqueInput;
 };
 
 
@@ -3446,78 +3377,6 @@ export type MutationPublishManyOrdersConnectionArgs = {
 };
 
 
-export type MutationPublishManyProductColorVariantsArgs = {
-  locales?: InputMaybe<Array<Locale>>;
-  publishBase?: InputMaybe<Scalars['Boolean']['input']>;
-  to?: Array<Stage>;
-  where?: InputMaybe<ProductColorVariantManyWhereInput>;
-  withDefaultLocale?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-export type MutationPublishManyProductColorVariantsConnectionArgs = {
-  after?: InputMaybe<Scalars['ID']['input']>;
-  before?: InputMaybe<Scalars['ID']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  from?: InputMaybe<Stage>;
-  last?: InputMaybe<Scalars['Int']['input']>;
-  locales?: InputMaybe<Array<Locale>>;
-  publishBase?: InputMaybe<Scalars['Boolean']['input']>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  to?: Array<Stage>;
-  where?: InputMaybe<ProductColorVariantManyWhereInput>;
-  withDefaultLocale?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-export type MutationPublishManyProductSizeColorVariantsArgs = {
-  locales?: InputMaybe<Array<Locale>>;
-  publishBase?: InputMaybe<Scalars['Boolean']['input']>;
-  to?: Array<Stage>;
-  where?: InputMaybe<ProductSizeColorVariantManyWhereInput>;
-  withDefaultLocale?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-export type MutationPublishManyProductSizeColorVariantsConnectionArgs = {
-  after?: InputMaybe<Scalars['ID']['input']>;
-  before?: InputMaybe<Scalars['ID']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  from?: InputMaybe<Stage>;
-  last?: InputMaybe<Scalars['Int']['input']>;
-  locales?: InputMaybe<Array<Locale>>;
-  publishBase?: InputMaybe<Scalars['Boolean']['input']>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  to?: Array<Stage>;
-  where?: InputMaybe<ProductSizeColorVariantManyWhereInput>;
-  withDefaultLocale?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-export type MutationPublishManyProductSizeVariantsArgs = {
-  locales?: InputMaybe<Array<Locale>>;
-  publishBase?: InputMaybe<Scalars['Boolean']['input']>;
-  to?: Array<Stage>;
-  where?: InputMaybe<ProductSizeVariantManyWhereInput>;
-  withDefaultLocale?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-export type MutationPublishManyProductSizeVariantsConnectionArgs = {
-  after?: InputMaybe<Scalars['ID']['input']>;
-  before?: InputMaybe<Scalars['ID']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  from?: InputMaybe<Stage>;
-  last?: InputMaybe<Scalars['Int']['input']>;
-  locales?: InputMaybe<Array<Locale>>;
-  publishBase?: InputMaybe<Scalars['Boolean']['input']>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  to?: Array<Stage>;
-  where?: InputMaybe<ProductSizeVariantManyWhereInput>;
-  withDefaultLocale?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
 export type MutationPublishManyProductsArgs = {
   locales?: InputMaybe<Array<Locale>>;
   publishBase?: InputMaybe<Scalars['Boolean']['input']>;
@@ -3560,6 +3419,42 @@ export type MutationPublishManyReviewsConnectionArgs = {
 };
 
 
+export type MutationPublishManySkusArgs = {
+  to?: Array<Stage>;
+  where?: InputMaybe<SkuManyWhereInput>;
+};
+
+
+export type MutationPublishManySkusConnectionArgs = {
+  after?: InputMaybe<Scalars['ID']['input']>;
+  before?: InputMaybe<Scalars['ID']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  from?: InputMaybe<Stage>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  to?: Array<Stage>;
+  where?: InputMaybe<SkuManyWhereInput>;
+};
+
+
+export type MutationPublishManyVariantsArgs = {
+  to?: Array<Stage>;
+  where?: InputMaybe<VariantManyWhereInput>;
+};
+
+
+export type MutationPublishManyVariantsConnectionArgs = {
+  after?: InputMaybe<Scalars['ID']['input']>;
+  before?: InputMaybe<Scalars['ID']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  from?: InputMaybe<Stage>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  to?: Array<Stage>;
+  where?: InputMaybe<VariantManyWhereInput>;
+};
+
+
 export type MutationPublishOrderArgs = {
   to?: Array<Stage>;
   where: OrderWhereUniqueInput;
@@ -3581,36 +3476,21 @@ export type MutationPublishProductArgs = {
 };
 
 
-export type MutationPublishProductColorVariantArgs = {
-  locales?: InputMaybe<Array<Locale>>;
-  publishBase?: InputMaybe<Scalars['Boolean']['input']>;
-  to?: Array<Stage>;
-  where: ProductColorVariantWhereUniqueInput;
-  withDefaultLocale?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-export type MutationPublishProductSizeColorVariantArgs = {
-  locales?: InputMaybe<Array<Locale>>;
-  publishBase?: InputMaybe<Scalars['Boolean']['input']>;
-  to?: Array<Stage>;
-  where: ProductSizeColorVariantWhereUniqueInput;
-  withDefaultLocale?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-export type MutationPublishProductSizeVariantArgs = {
-  locales?: InputMaybe<Array<Locale>>;
-  publishBase?: InputMaybe<Scalars['Boolean']['input']>;
-  to?: Array<Stage>;
-  where: ProductSizeVariantWhereUniqueInput;
-  withDefaultLocale?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
 export type MutationPublishReviewArgs = {
   to?: Array<Stage>;
   where: ReviewWhereUniqueInput;
+};
+
+
+export type MutationPublishSkuArgs = {
+  to?: Array<Stage>;
+  where: SkuWhereUniqueInput;
+};
+
+
+export type MutationPublishVariantArgs = {
+  to?: Array<Stage>;
+  where: VariantWhereUniqueInput;
 };
 
 
@@ -3682,44 +3562,27 @@ export type MutationSchedulePublishProductArgs = {
 };
 
 
-export type MutationSchedulePublishProductColorVariantArgs = {
-  locales?: InputMaybe<Array<Locale>>;
-  publishBase?: InputMaybe<Scalars['Boolean']['input']>;
-  releaseAt?: InputMaybe<Scalars['DateTime']['input']>;
-  releaseId?: InputMaybe<Scalars['String']['input']>;
-  to?: Array<Stage>;
-  where: ProductColorVariantWhereUniqueInput;
-  withDefaultLocale?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-export type MutationSchedulePublishProductSizeColorVariantArgs = {
-  locales?: InputMaybe<Array<Locale>>;
-  publishBase?: InputMaybe<Scalars['Boolean']['input']>;
-  releaseAt?: InputMaybe<Scalars['DateTime']['input']>;
-  releaseId?: InputMaybe<Scalars['String']['input']>;
-  to?: Array<Stage>;
-  where: ProductSizeColorVariantWhereUniqueInput;
-  withDefaultLocale?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-export type MutationSchedulePublishProductSizeVariantArgs = {
-  locales?: InputMaybe<Array<Locale>>;
-  publishBase?: InputMaybe<Scalars['Boolean']['input']>;
-  releaseAt?: InputMaybe<Scalars['DateTime']['input']>;
-  releaseId?: InputMaybe<Scalars['String']['input']>;
-  to?: Array<Stage>;
-  where: ProductSizeVariantWhereUniqueInput;
-  withDefaultLocale?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
 export type MutationSchedulePublishReviewArgs = {
   releaseAt?: InputMaybe<Scalars['DateTime']['input']>;
   releaseId?: InputMaybe<Scalars['String']['input']>;
   to?: Array<Stage>;
   where: ReviewWhereUniqueInput;
+};
+
+
+export type MutationSchedulePublishSkuArgs = {
+  releaseAt?: InputMaybe<Scalars['DateTime']['input']>;
+  releaseId?: InputMaybe<Scalars['String']['input']>;
+  to?: Array<Stage>;
+  where: SkuWhereUniqueInput;
+};
+
+
+export type MutationSchedulePublishVariantArgs = {
+  releaseAt?: InputMaybe<Scalars['DateTime']['input']>;
+  releaseId?: InputMaybe<Scalars['String']['input']>;
+  to?: Array<Stage>;
+  where: VariantWhereUniqueInput;
 };
 
 
@@ -3787,41 +3650,27 @@ export type MutationScheduleUnpublishProductArgs = {
 };
 
 
-export type MutationScheduleUnpublishProductColorVariantArgs = {
-  from?: Array<Stage>;
-  locales?: InputMaybe<Array<Locale>>;
-  releaseAt?: InputMaybe<Scalars['DateTime']['input']>;
-  releaseId?: InputMaybe<Scalars['String']['input']>;
-  unpublishBase?: InputMaybe<Scalars['Boolean']['input']>;
-  where: ProductColorVariantWhereUniqueInput;
-};
-
-
-export type MutationScheduleUnpublishProductSizeColorVariantArgs = {
-  from?: Array<Stage>;
-  locales?: InputMaybe<Array<Locale>>;
-  releaseAt?: InputMaybe<Scalars['DateTime']['input']>;
-  releaseId?: InputMaybe<Scalars['String']['input']>;
-  unpublishBase?: InputMaybe<Scalars['Boolean']['input']>;
-  where: ProductSizeColorVariantWhereUniqueInput;
-};
-
-
-export type MutationScheduleUnpublishProductSizeVariantArgs = {
-  from?: Array<Stage>;
-  locales?: InputMaybe<Array<Locale>>;
-  releaseAt?: InputMaybe<Scalars['DateTime']['input']>;
-  releaseId?: InputMaybe<Scalars['String']['input']>;
-  unpublishBase?: InputMaybe<Scalars['Boolean']['input']>;
-  where: ProductSizeVariantWhereUniqueInput;
-};
-
-
 export type MutationScheduleUnpublishReviewArgs = {
   from?: Array<Stage>;
   releaseAt?: InputMaybe<Scalars['DateTime']['input']>;
   releaseId?: InputMaybe<Scalars['String']['input']>;
   where: ReviewWhereUniqueInput;
+};
+
+
+export type MutationScheduleUnpublishSkuArgs = {
+  from?: Array<Stage>;
+  releaseAt?: InputMaybe<Scalars['DateTime']['input']>;
+  releaseId?: InputMaybe<Scalars['String']['input']>;
+  where: SkuWhereUniqueInput;
+};
+
+
+export type MutationScheduleUnpublishVariantArgs = {
+  from?: Array<Stage>;
+  releaseAt?: InputMaybe<Scalars['DateTime']['input']>;
+  releaseId?: InputMaybe<Scalars['String']['input']>;
+  where: VariantWhereUniqueInput;
 };
 
 
@@ -3975,72 +3824,6 @@ export type MutationUnpublishManyOrdersConnectionArgs = {
 };
 
 
-export type MutationUnpublishManyProductColorVariantsArgs = {
-  from?: Array<Stage>;
-  locales?: InputMaybe<Array<Locale>>;
-  unpublishBase?: InputMaybe<Scalars['Boolean']['input']>;
-  where?: InputMaybe<ProductColorVariantManyWhereInput>;
-};
-
-
-export type MutationUnpublishManyProductColorVariantsConnectionArgs = {
-  after?: InputMaybe<Scalars['ID']['input']>;
-  before?: InputMaybe<Scalars['ID']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  from?: Array<Stage>;
-  last?: InputMaybe<Scalars['Int']['input']>;
-  locales?: InputMaybe<Array<Locale>>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  stage?: InputMaybe<Stage>;
-  unpublishBase?: InputMaybe<Scalars['Boolean']['input']>;
-  where?: InputMaybe<ProductColorVariantManyWhereInput>;
-};
-
-
-export type MutationUnpublishManyProductSizeColorVariantsArgs = {
-  from?: Array<Stage>;
-  locales?: InputMaybe<Array<Locale>>;
-  unpublishBase?: InputMaybe<Scalars['Boolean']['input']>;
-  where?: InputMaybe<ProductSizeColorVariantManyWhereInput>;
-};
-
-
-export type MutationUnpublishManyProductSizeColorVariantsConnectionArgs = {
-  after?: InputMaybe<Scalars['ID']['input']>;
-  before?: InputMaybe<Scalars['ID']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  from?: Array<Stage>;
-  last?: InputMaybe<Scalars['Int']['input']>;
-  locales?: InputMaybe<Array<Locale>>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  stage?: InputMaybe<Stage>;
-  unpublishBase?: InputMaybe<Scalars['Boolean']['input']>;
-  where?: InputMaybe<ProductSizeColorVariantManyWhereInput>;
-};
-
-
-export type MutationUnpublishManyProductSizeVariantsArgs = {
-  from?: Array<Stage>;
-  locales?: InputMaybe<Array<Locale>>;
-  unpublishBase?: InputMaybe<Scalars['Boolean']['input']>;
-  where?: InputMaybe<ProductSizeVariantManyWhereInput>;
-};
-
-
-export type MutationUnpublishManyProductSizeVariantsConnectionArgs = {
-  after?: InputMaybe<Scalars['ID']['input']>;
-  before?: InputMaybe<Scalars['ID']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  from?: Array<Stage>;
-  last?: InputMaybe<Scalars['Int']['input']>;
-  locales?: InputMaybe<Array<Locale>>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  stage?: InputMaybe<Stage>;
-  unpublishBase?: InputMaybe<Scalars['Boolean']['input']>;
-  where?: InputMaybe<ProductSizeVariantManyWhereInput>;
-};
-
-
 export type MutationUnpublishManyProductsArgs = {
   from?: Array<Stage>;
   locales?: InputMaybe<Array<Locale>>;
@@ -4081,6 +3864,42 @@ export type MutationUnpublishManyReviewsConnectionArgs = {
 };
 
 
+export type MutationUnpublishManySkusArgs = {
+  from?: Array<Stage>;
+  where?: InputMaybe<SkuManyWhereInput>;
+};
+
+
+export type MutationUnpublishManySkusConnectionArgs = {
+  after?: InputMaybe<Scalars['ID']['input']>;
+  before?: InputMaybe<Scalars['ID']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  from?: Array<Stage>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  stage?: InputMaybe<Stage>;
+  where?: InputMaybe<SkuManyWhereInput>;
+};
+
+
+export type MutationUnpublishManyVariantsArgs = {
+  from?: Array<Stage>;
+  where?: InputMaybe<VariantManyWhereInput>;
+};
+
+
+export type MutationUnpublishManyVariantsConnectionArgs = {
+  after?: InputMaybe<Scalars['ID']['input']>;
+  before?: InputMaybe<Scalars['ID']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  from?: Array<Stage>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  stage?: InputMaybe<Stage>;
+  where?: InputMaybe<VariantManyWhereInput>;
+};
+
+
 export type MutationUnpublishOrderArgs = {
   from?: Array<Stage>;
   where: OrderWhereUniqueInput;
@@ -4101,33 +3920,21 @@ export type MutationUnpublishProductArgs = {
 };
 
 
-export type MutationUnpublishProductColorVariantArgs = {
-  from?: Array<Stage>;
-  locales?: InputMaybe<Array<Locale>>;
-  unpublishBase?: InputMaybe<Scalars['Boolean']['input']>;
-  where: ProductColorVariantWhereUniqueInput;
-};
-
-
-export type MutationUnpublishProductSizeColorVariantArgs = {
-  from?: Array<Stage>;
-  locales?: InputMaybe<Array<Locale>>;
-  unpublishBase?: InputMaybe<Scalars['Boolean']['input']>;
-  where: ProductSizeColorVariantWhereUniqueInput;
-};
-
-
-export type MutationUnpublishProductSizeVariantArgs = {
-  from?: Array<Stage>;
-  locales?: InputMaybe<Array<Locale>>;
-  unpublishBase?: InputMaybe<Scalars['Boolean']['input']>;
-  where: ProductSizeVariantWhereUniqueInput;
-};
-
-
 export type MutationUnpublishReviewArgs = {
   from?: Array<Stage>;
   where: ReviewWhereUniqueInput;
+};
+
+
+export type MutationUnpublishSkuArgs = {
+  from?: Array<Stage>;
+  where: SkuWhereUniqueInput;
+};
+
+
+export type MutationUnpublishVariantArgs = {
+  from?: Array<Stage>;
+  where: VariantWhereUniqueInput;
 };
 
 
@@ -4257,57 +4064,6 @@ export type MutationUpdateManyOrdersConnectionArgs = {
 };
 
 
-export type MutationUpdateManyProductColorVariantsArgs = {
-  data: ProductColorVariantUpdateManyInput;
-  where?: InputMaybe<ProductColorVariantManyWhereInput>;
-};
-
-
-export type MutationUpdateManyProductColorVariantsConnectionArgs = {
-  after?: InputMaybe<Scalars['ID']['input']>;
-  before?: InputMaybe<Scalars['ID']['input']>;
-  data: ProductColorVariantUpdateManyInput;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  last?: InputMaybe<Scalars['Int']['input']>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  where?: InputMaybe<ProductColorVariantManyWhereInput>;
-};
-
-
-export type MutationUpdateManyProductSizeColorVariantsArgs = {
-  data: ProductSizeColorVariantUpdateManyInput;
-  where?: InputMaybe<ProductSizeColorVariantManyWhereInput>;
-};
-
-
-export type MutationUpdateManyProductSizeColorVariantsConnectionArgs = {
-  after?: InputMaybe<Scalars['ID']['input']>;
-  before?: InputMaybe<Scalars['ID']['input']>;
-  data: ProductSizeColorVariantUpdateManyInput;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  last?: InputMaybe<Scalars['Int']['input']>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  where?: InputMaybe<ProductSizeColorVariantManyWhereInput>;
-};
-
-
-export type MutationUpdateManyProductSizeVariantsArgs = {
-  data: ProductSizeVariantUpdateManyInput;
-  where?: InputMaybe<ProductSizeVariantManyWhereInput>;
-};
-
-
-export type MutationUpdateManyProductSizeVariantsConnectionArgs = {
-  after?: InputMaybe<Scalars['ID']['input']>;
-  before?: InputMaybe<Scalars['ID']['input']>;
-  data: ProductSizeVariantUpdateManyInput;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  last?: InputMaybe<Scalars['Int']['input']>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  where?: InputMaybe<ProductSizeVariantManyWhereInput>;
-};
-
-
 export type MutationUpdateManyProductsArgs = {
   data: ProductUpdateManyInput;
   where?: InputMaybe<ProductManyWhereInput>;
@@ -4342,6 +4098,40 @@ export type MutationUpdateManyReviewsConnectionArgs = {
 };
 
 
+export type MutationUpdateManySkusArgs = {
+  data: SkuUpdateManyInput;
+  where?: InputMaybe<SkuManyWhereInput>;
+};
+
+
+export type MutationUpdateManySkusConnectionArgs = {
+  after?: InputMaybe<Scalars['ID']['input']>;
+  before?: InputMaybe<Scalars['ID']['input']>;
+  data: SkuUpdateManyInput;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<SkuManyWhereInput>;
+};
+
+
+export type MutationUpdateManyVariantsArgs = {
+  data: VariantUpdateManyInput;
+  where?: InputMaybe<VariantManyWhereInput>;
+};
+
+
+export type MutationUpdateManyVariantsConnectionArgs = {
+  after?: InputMaybe<Scalars['ID']['input']>;
+  before?: InputMaybe<Scalars['ID']['input']>;
+  data: VariantUpdateManyInput;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<VariantManyWhereInput>;
+};
+
+
 export type MutationUpdateOrderArgs = {
   data: OrderUpdateInput;
   where: OrderWhereUniqueInput;
@@ -4360,24 +4150,6 @@ export type MutationUpdateProductArgs = {
 };
 
 
-export type MutationUpdateProductColorVariantArgs = {
-  data: ProductColorVariantUpdateInput;
-  where: ProductColorVariantWhereUniqueInput;
-};
-
-
-export type MutationUpdateProductSizeColorVariantArgs = {
-  data: ProductSizeColorVariantUpdateInput;
-  where: ProductSizeColorVariantWhereUniqueInput;
-};
-
-
-export type MutationUpdateProductSizeVariantArgs = {
-  data: ProductSizeVariantUpdateInput;
-  where: ProductSizeVariantWhereUniqueInput;
-};
-
-
 export type MutationUpdateReviewArgs = {
   data: ReviewUpdateInput;
   where: ReviewWhereUniqueInput;
@@ -4387,6 +4159,18 @@ export type MutationUpdateReviewArgs = {
 export type MutationUpdateScheduledReleaseArgs = {
   data: ScheduledReleaseUpdateInput;
   where: ScheduledReleaseWhereUniqueInput;
+};
+
+
+export type MutationUpdateSkuArgs = {
+  data: SkuUpdateInput;
+  where: SkuWhereUniqueInput;
+};
+
+
+export type MutationUpdateVariantArgs = {
+  data: VariantUpdateInput;
+  where: VariantWhereUniqueInput;
 };
 
 
@@ -4432,27 +4216,21 @@ export type MutationUpsertProductArgs = {
 };
 
 
-export type MutationUpsertProductColorVariantArgs = {
-  upsert: ProductColorVariantUpsertInput;
-  where: ProductColorVariantWhereUniqueInput;
-};
-
-
-export type MutationUpsertProductSizeColorVariantArgs = {
-  upsert: ProductSizeColorVariantUpsertInput;
-  where: ProductSizeColorVariantWhereUniqueInput;
-};
-
-
-export type MutationUpsertProductSizeVariantArgs = {
-  upsert: ProductSizeVariantUpsertInput;
-  where: ProductSizeVariantWhereUniqueInput;
-};
-
-
 export type MutationUpsertReviewArgs = {
   upsert: ReviewUpsertInput;
   where: ReviewWhereUniqueInput;
+};
+
+
+export type MutationUpsertSkuArgs = {
+  upsert: SkuUpsertInput;
+  where: SkuWhereUniqueInput;
+};
+
+
+export type MutationUpsertVariantArgs = {
+  upsert: VariantUpsertInput;
+  where: VariantWhereUniqueInput;
 };
 
 /** An object with an ID */
@@ -5516,7 +5294,7 @@ export type Product = Node & {
   updatedAt: Scalars['DateTime']['output'];
   /** User that last updated this document */
   updatedBy?: Maybe<User>;
-  variants: Array<ProductVariants>;
+  variants: Array<Variant>;
 };
 
 
@@ -5657,541 +5435,15 @@ export type ProductVariantsArgs = {
   forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
   last?: InputMaybe<Scalars['Int']['input']>;
   locales?: InputMaybe<Array<Locale>>;
+  orderBy?: InputMaybe<VariantOrderByInput>;
   skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<VariantWhereInput>;
 };
 
 export type ProductColor =
   | 'BLACK'
   | 'PINK'
   | 'PURPLE';
-
-export type ProductColorVariant = Node & {
-  color: ProductColor;
-  /** The time the document was created */
-  createdAt: Scalars['DateTime']['output'];
-  /** User that created this document */
-  createdBy?: Maybe<User>;
-  /** Get the document in other stages */
-  documentInStages: Array<ProductColorVariant>;
-  /** List of ProductColorVariant versions */
-  history: Array<Version>;
-  /** The unique identifier */
-  id: Scalars['ID']['output'];
-  /** System Locale field */
-  locale: Locale;
-  /** Get the other localizations for this document */
-  localizations: Array<ProductColorVariant>;
-  name: Scalars['String']['output'];
-  product?: Maybe<Product>;
-  /** The time the document was published. Null on documents in draft stage. */
-  publishedAt?: Maybe<Scalars['DateTime']['output']>;
-  /** User that last published this document */
-  publishedBy?: Maybe<User>;
-  scheduledIn: Array<ScheduledOperation>;
-  /** System stage field */
-  stage: Stage;
-  /** The time the document was updated */
-  updatedAt: Scalars['DateTime']['output'];
-  /** User that last updated this document */
-  updatedBy?: Maybe<User>;
-};
-
-
-export type ProductColorVariantCreatedAtArgs = {
-  variation?: SystemDateTimeFieldVariation;
-};
-
-
-export type ProductColorVariantCreatedByArgs = {
-  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
-  locales?: InputMaybe<Array<Locale>>;
-};
-
-
-export type ProductColorVariantDocumentInStagesArgs = {
-  includeCurrent?: Scalars['Boolean']['input'];
-  inheritLocale?: Scalars['Boolean']['input'];
-  stages?: Array<Stage>;
-};
-
-
-export type ProductColorVariantHistoryArgs = {
-  limit?: Scalars['Int']['input'];
-  skip?: Scalars['Int']['input'];
-  stageOverride?: InputMaybe<Stage>;
-};
-
-
-export type ProductColorVariantLocalizationsArgs = {
-  includeCurrent?: Scalars['Boolean']['input'];
-  locales?: Array<Locale>;
-};
-
-
-export type ProductColorVariantProductArgs = {
-  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
-  locales?: InputMaybe<Array<Locale>>;
-};
-
-
-export type ProductColorVariantPublishedAtArgs = {
-  variation?: SystemDateTimeFieldVariation;
-};
-
-
-export type ProductColorVariantPublishedByArgs = {
-  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
-  locales?: InputMaybe<Array<Locale>>;
-};
-
-
-export type ProductColorVariantScheduledInArgs = {
-  after?: InputMaybe<Scalars['String']['input']>;
-  before?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
-  last?: InputMaybe<Scalars['Int']['input']>;
-  locales?: InputMaybe<Array<Locale>>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  where?: InputMaybe<ScheduledOperationWhereInput>;
-};
-
-
-export type ProductColorVariantUpdatedAtArgs = {
-  variation?: SystemDateTimeFieldVariation;
-};
-
-
-export type ProductColorVariantUpdatedByArgs = {
-  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
-  locales?: InputMaybe<Array<Locale>>;
-};
-
-export type ProductColorVariantConnectInput = {
-  /** Allow to specify document position in list of connected documents, will default to appending at end of list */
-  position?: InputMaybe<ConnectPositionInput>;
-  /** Document to connect */
-  where: ProductColorVariantWhereUniqueInput;
-};
-
-/** A connection to a list of items. */
-export type ProductColorVariantConnection = {
-  aggregate: Aggregate;
-  /** A list of edges. */
-  edges: Array<ProductColorVariantEdge>;
-  /** Information to aid in pagination. */
-  pageInfo: PageInfo;
-};
-
-export type ProductColorVariantCreateInput = {
-  color: ProductColor;
-  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** Inline mutations for managing document localizations excluding the default locale */
-  localizations?: InputMaybe<ProductColorVariantCreateLocalizationsInput>;
-  /** name input for default locale (en) */
-  name: Scalars['String']['input'];
-  product?: InputMaybe<ProductCreateOneInlineInput>;
-  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
-};
-
-export type ProductColorVariantCreateLocalizationDataInput = {
-  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
-  name: Scalars['String']['input'];
-  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
-};
-
-export type ProductColorVariantCreateLocalizationInput = {
-  /** Localization input */
-  data: ProductColorVariantCreateLocalizationDataInput;
-  locale: Locale;
-};
-
-export type ProductColorVariantCreateLocalizationsInput = {
-  /** Create localizations for the newly-created document */
-  create?: InputMaybe<Array<ProductColorVariantCreateLocalizationInput>>;
-};
-
-export type ProductColorVariantCreateManyInlineInput = {
-  /** Connect multiple existing ProductColorVariant documents */
-  connect?: InputMaybe<Array<ProductColorVariantWhereUniqueInput>>;
-  /** Create and connect multiple existing ProductColorVariant documents */
-  create?: InputMaybe<Array<ProductColorVariantCreateInput>>;
-};
-
-export type ProductColorVariantCreateOneInlineInput = {
-  /** Connect one existing ProductColorVariant document */
-  connect?: InputMaybe<ProductColorVariantWhereUniqueInput>;
-  /** Create and connect one ProductColorVariant document */
-  create?: InputMaybe<ProductColorVariantCreateInput>;
-};
-
-/** An edge in a connection. */
-export type ProductColorVariantEdge = {
-  /** A cursor for use in pagination. */
-  cursor: Scalars['String']['output'];
-  /** The item at the end of the edge. */
-  node: ProductColorVariant;
-};
-
-/** Identifies documents */
-export type ProductColorVariantManyWhereInput = {
-  /** Logical AND on all given filters. */
-  AND?: InputMaybe<Array<ProductColorVariantWhereInput>>;
-  /** Logical NOT on all given filters combined by AND. */
-  NOT?: InputMaybe<Array<ProductColorVariantWhereInput>>;
-  /** Logical OR on all given filters. */
-  OR?: InputMaybe<Array<ProductColorVariantWhereInput>>;
-  /** Contains search across all appropriate fields. */
-  _search?: InputMaybe<Scalars['String']['input']>;
-  color?: InputMaybe<ProductColor>;
-  /** All values that are contained in given list. */
-  color_in?: InputMaybe<Array<InputMaybe<ProductColor>>>;
-  /** Any other value that exists and is not equal to the given value. */
-  color_not?: InputMaybe<ProductColor>;
-  /** All values that are not contained in given list. */
-  color_not_in?: InputMaybe<Array<InputMaybe<ProductColor>>>;
-  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than the given value. */
-  createdAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than or equal the given value. */
-  createdAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are contained in given list. */
-  createdAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  /** All values less than the given value. */
-  createdAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values less than or equal the given value. */
-  createdAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** Any other value that exists and is not equal to the given value. */
-  createdAt_not?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are not contained in given list. */
-  createdAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  createdBy?: InputMaybe<UserWhereInput>;
-  documentInStages_every?: InputMaybe<ProductColorVariantWhereStageInput>;
-  documentInStages_none?: InputMaybe<ProductColorVariantWhereStageInput>;
-  documentInStages_some?: InputMaybe<ProductColorVariantWhereStageInput>;
-  id?: InputMaybe<Scalars['ID']['input']>;
-  /** All values containing the given string. */
-  id_contains?: InputMaybe<Scalars['ID']['input']>;
-  /** All values ending with the given string. */
-  id_ends_with?: InputMaybe<Scalars['ID']['input']>;
-  /** All values that are contained in given list. */
-  id_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** Any other value that exists and is not equal to the given value. */
-  id_not?: InputMaybe<Scalars['ID']['input']>;
-  /** All values not containing the given string. */
-  id_not_contains?: InputMaybe<Scalars['ID']['input']>;
-  /** All values not ending with the given string */
-  id_not_ends_with?: InputMaybe<Scalars['ID']['input']>;
-  /** All values that are not contained in given list. */
-  id_not_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** All values not starting with the given string. */
-  id_not_starts_with?: InputMaybe<Scalars['ID']['input']>;
-  /** All values starting with the given string. */
-  id_starts_with?: InputMaybe<Scalars['ID']['input']>;
-  product?: InputMaybe<ProductWhereInput>;
-  publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than the given value. */
-  publishedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than or equal the given value. */
-  publishedAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are contained in given list. */
-  publishedAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  /** All values less than the given value. */
-  publishedAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values less than or equal the given value. */
-  publishedAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** Any other value that exists and is not equal to the given value. */
-  publishedAt_not?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are not contained in given list. */
-  publishedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  publishedBy?: InputMaybe<UserWhereInput>;
-  scheduledIn_every?: InputMaybe<ScheduledOperationWhereInput>;
-  scheduledIn_none?: InputMaybe<ScheduledOperationWhereInput>;
-  scheduledIn_some?: InputMaybe<ScheduledOperationWhereInput>;
-  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than the given value. */
-  updatedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than or equal the given value. */
-  updatedAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are contained in given list. */
-  updatedAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  /** All values less than the given value. */
-  updatedAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values less than or equal the given value. */
-  updatedAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** Any other value that exists and is not equal to the given value. */
-  updatedAt_not?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are not contained in given list. */
-  updatedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  updatedBy?: InputMaybe<UserWhereInput>;
-};
-
-export type ProductColorVariantOrderByInput =
-  | 'color_ASC'
-  | 'color_DESC'
-  | 'createdAt_ASC'
-  | 'createdAt_DESC'
-  | 'id_ASC'
-  | 'id_DESC'
-  | 'name_ASC'
-  | 'name_DESC'
-  | 'publishedAt_ASC'
-  | 'publishedAt_DESC'
-  | 'updatedAt_ASC'
-  | 'updatedAt_DESC';
-
-export type ProductColorVariantUpdateInput = {
-  color?: InputMaybe<ProductColor>;
-  /** Manage document localizations */
-  localizations?: InputMaybe<ProductColorVariantUpdateLocalizationsInput>;
-  /** name input for default locale (en) */
-  name?: InputMaybe<Scalars['String']['input']>;
-  product?: InputMaybe<ProductUpdateOneInlineInput>;
-};
-
-export type ProductColorVariantUpdateLocalizationDataInput = {
-  name?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type ProductColorVariantUpdateLocalizationInput = {
-  data: ProductColorVariantUpdateLocalizationDataInput;
-  locale: Locale;
-};
-
-export type ProductColorVariantUpdateLocalizationsInput = {
-  /** Localizations to create */
-  create?: InputMaybe<Array<ProductColorVariantCreateLocalizationInput>>;
-  /** Localizations to delete */
-  delete?: InputMaybe<Array<Locale>>;
-  /** Localizations to update */
-  update?: InputMaybe<Array<ProductColorVariantUpdateLocalizationInput>>;
-  upsert?: InputMaybe<Array<ProductColorVariantUpsertLocalizationInput>>;
-};
-
-export type ProductColorVariantUpdateManyInlineInput = {
-  /** Connect multiple existing ProductColorVariant documents */
-  connect?: InputMaybe<Array<ProductColorVariantConnectInput>>;
-  /** Create and connect multiple ProductColorVariant documents */
-  create?: InputMaybe<Array<ProductColorVariantCreateInput>>;
-  /** Delete multiple ProductColorVariant documents */
-  delete?: InputMaybe<Array<ProductColorVariantWhereUniqueInput>>;
-  /** Disconnect multiple ProductColorVariant documents */
-  disconnect?: InputMaybe<Array<ProductColorVariantWhereUniqueInput>>;
-  /** Override currently-connected documents with multiple existing ProductColorVariant documents */
-  set?: InputMaybe<Array<ProductColorVariantWhereUniqueInput>>;
-  /** Update multiple ProductColorVariant documents */
-  update?: InputMaybe<Array<ProductColorVariantUpdateWithNestedWhereUniqueInput>>;
-  /** Upsert multiple ProductColorVariant documents */
-  upsert?: InputMaybe<Array<ProductColorVariantUpsertWithNestedWhereUniqueInput>>;
-};
-
-export type ProductColorVariantUpdateManyInput = {
-  color?: InputMaybe<ProductColor>;
-  /** Optional updates to localizations */
-  localizations?: InputMaybe<ProductColorVariantUpdateManyLocalizationsInput>;
-  /** name input for default locale (en) */
-  name?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type ProductColorVariantUpdateManyLocalizationDataInput = {
-  name?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type ProductColorVariantUpdateManyLocalizationInput = {
-  data: ProductColorVariantUpdateManyLocalizationDataInput;
-  locale: Locale;
-};
-
-export type ProductColorVariantUpdateManyLocalizationsInput = {
-  /** Localizations to update */
-  update?: InputMaybe<Array<ProductColorVariantUpdateManyLocalizationInput>>;
-};
-
-export type ProductColorVariantUpdateManyWithNestedWhereInput = {
-  /** Update many input */
-  data: ProductColorVariantUpdateManyInput;
-  /** Document search */
-  where: ProductColorVariantWhereInput;
-};
-
-export type ProductColorVariantUpdateOneInlineInput = {
-  /** Connect existing ProductColorVariant document */
-  connect?: InputMaybe<ProductColorVariantWhereUniqueInput>;
-  /** Create and connect one ProductColorVariant document */
-  create?: InputMaybe<ProductColorVariantCreateInput>;
-  /** Delete currently connected ProductColorVariant document */
-  delete?: InputMaybe<Scalars['Boolean']['input']>;
-  /** Disconnect currently connected ProductColorVariant document */
-  disconnect?: InputMaybe<Scalars['Boolean']['input']>;
-  /** Update single ProductColorVariant document */
-  update?: InputMaybe<ProductColorVariantUpdateWithNestedWhereUniqueInput>;
-  /** Upsert single ProductColorVariant document */
-  upsert?: InputMaybe<ProductColorVariantUpsertWithNestedWhereUniqueInput>;
-};
-
-export type ProductColorVariantUpdateWithNestedWhereUniqueInput = {
-  /** Document to update */
-  data: ProductColorVariantUpdateInput;
-  /** Unique document search */
-  where: ProductColorVariantWhereUniqueInput;
-};
-
-export type ProductColorVariantUpsertInput = {
-  /** Create document if it didn't exist */
-  create: ProductColorVariantCreateInput;
-  /** Update document if it exists */
-  update: ProductColorVariantUpdateInput;
-};
-
-export type ProductColorVariantUpsertLocalizationInput = {
-  create: ProductColorVariantCreateLocalizationDataInput;
-  locale: Locale;
-  update: ProductColorVariantUpdateLocalizationDataInput;
-};
-
-export type ProductColorVariantUpsertWithNestedWhereUniqueInput = {
-  /** Upsert data */
-  data: ProductColorVariantUpsertInput;
-  /** Unique document search */
-  where: ProductColorVariantWhereUniqueInput;
-};
-
-/** This contains a set of filters that can be used to compare values internally */
-export type ProductColorVariantWhereComparatorInput = {
-  /** This field can be used to request to check if the entry is outdated by internal comparison */
-  outdated_to?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-/** Identifies documents */
-export type ProductColorVariantWhereInput = {
-  /** Logical AND on all given filters. */
-  AND?: InputMaybe<Array<ProductColorVariantWhereInput>>;
-  /** Logical NOT on all given filters combined by AND. */
-  NOT?: InputMaybe<Array<ProductColorVariantWhereInput>>;
-  /** Logical OR on all given filters. */
-  OR?: InputMaybe<Array<ProductColorVariantWhereInput>>;
-  /** Contains search across all appropriate fields. */
-  _search?: InputMaybe<Scalars['String']['input']>;
-  color?: InputMaybe<ProductColor>;
-  /** All values that are contained in given list. */
-  color_in?: InputMaybe<Array<InputMaybe<ProductColor>>>;
-  /** Any other value that exists and is not equal to the given value. */
-  color_not?: InputMaybe<ProductColor>;
-  /** All values that are not contained in given list. */
-  color_not_in?: InputMaybe<Array<InputMaybe<ProductColor>>>;
-  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than the given value. */
-  createdAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than or equal the given value. */
-  createdAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are contained in given list. */
-  createdAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  /** All values less than the given value. */
-  createdAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values less than or equal the given value. */
-  createdAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** Any other value that exists and is not equal to the given value. */
-  createdAt_not?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are not contained in given list. */
-  createdAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  createdBy?: InputMaybe<UserWhereInput>;
-  documentInStages_every?: InputMaybe<ProductColorVariantWhereStageInput>;
-  documentInStages_none?: InputMaybe<ProductColorVariantWhereStageInput>;
-  documentInStages_some?: InputMaybe<ProductColorVariantWhereStageInput>;
-  id?: InputMaybe<Scalars['ID']['input']>;
-  /** All values containing the given string. */
-  id_contains?: InputMaybe<Scalars['ID']['input']>;
-  /** All values ending with the given string. */
-  id_ends_with?: InputMaybe<Scalars['ID']['input']>;
-  /** All values that are contained in given list. */
-  id_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** Any other value that exists and is not equal to the given value. */
-  id_not?: InputMaybe<Scalars['ID']['input']>;
-  /** All values not containing the given string. */
-  id_not_contains?: InputMaybe<Scalars['ID']['input']>;
-  /** All values not ending with the given string */
-  id_not_ends_with?: InputMaybe<Scalars['ID']['input']>;
-  /** All values that are not contained in given list. */
-  id_not_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** All values not starting with the given string. */
-  id_not_starts_with?: InputMaybe<Scalars['ID']['input']>;
-  /** All values starting with the given string. */
-  id_starts_with?: InputMaybe<Scalars['ID']['input']>;
-  name?: InputMaybe<Scalars['String']['input']>;
-  /** All values containing the given string. */
-  name_contains?: InputMaybe<Scalars['String']['input']>;
-  /** All values ending with the given string. */
-  name_ends_with?: InputMaybe<Scalars['String']['input']>;
-  /** All values that are contained in given list. */
-  name_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  /** Any other value that exists and is not equal to the given value. */
-  name_not?: InputMaybe<Scalars['String']['input']>;
-  /** All values not containing the given string. */
-  name_not_contains?: InputMaybe<Scalars['String']['input']>;
-  /** All values not ending with the given string */
-  name_not_ends_with?: InputMaybe<Scalars['String']['input']>;
-  /** All values that are not contained in given list. */
-  name_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  /** All values not starting with the given string. */
-  name_not_starts_with?: InputMaybe<Scalars['String']['input']>;
-  /** All values starting with the given string. */
-  name_starts_with?: InputMaybe<Scalars['String']['input']>;
-  product?: InputMaybe<ProductWhereInput>;
-  publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than the given value. */
-  publishedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than or equal the given value. */
-  publishedAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are contained in given list. */
-  publishedAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  /** All values less than the given value. */
-  publishedAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values less than or equal the given value. */
-  publishedAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** Any other value that exists and is not equal to the given value. */
-  publishedAt_not?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are not contained in given list. */
-  publishedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  publishedBy?: InputMaybe<UserWhereInput>;
-  scheduledIn_every?: InputMaybe<ScheduledOperationWhereInput>;
-  scheduledIn_none?: InputMaybe<ScheduledOperationWhereInput>;
-  scheduledIn_some?: InputMaybe<ScheduledOperationWhereInput>;
-  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than the given value. */
-  updatedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than or equal the given value. */
-  updatedAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are contained in given list. */
-  updatedAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  /** All values less than the given value. */
-  updatedAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values less than or equal the given value. */
-  updatedAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** Any other value that exists and is not equal to the given value. */
-  updatedAt_not?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are not contained in given list. */
-  updatedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  updatedBy?: InputMaybe<UserWhereInput>;
-};
-
-/** The document in stages filter allows specifying a stage entry to cross compare the same document between different stages */
-export type ProductColorVariantWhereStageInput = {
-  /** Logical AND on all given filters. */
-  AND?: InputMaybe<Array<ProductColorVariantWhereStageInput>>;
-  /** Logical NOT on all given filters combined by AND. */
-  NOT?: InputMaybe<Array<ProductColorVariantWhereStageInput>>;
-  /** Logical OR on all given filters. */
-  OR?: InputMaybe<Array<ProductColorVariantWhereStageInput>>;
-  /** This field contains fields which can be set as true or false to specify an internal comparison */
-  compareWithParent?: InputMaybe<ProductColorVariantWhereComparatorInput>;
-  /** Specify the stage to compare with */
-  stage?: InputMaybe<Stage>;
-};
-
-/** References ProductColorVariant record uniquely */
-export type ProductColorVariantWhereUniqueInput = {
-  id?: InputMaybe<Scalars['ID']['input']>;
-};
 
 export type ProductConnectInput = {
   /** Allow to specify document position in list of connected documents, will default to appending at end of list */
@@ -6227,7 +5479,7 @@ export type ProductCreateInput = {
   /** slug input for default locale (en) */
   slug: Scalars['String']['input'];
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
-  variants?: InputMaybe<ProductVariantsCreateManyInlineInput>;
+  variants?: InputMaybe<VariantCreateManyInlineInput>;
 };
 
 export type ProductCreateLocalizationDataInput = {
@@ -6370,10 +5622,9 @@ export type ProductManyWhereInput = {
   /** All values that are not contained in given list. */
   updatedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
   updatedBy?: InputMaybe<UserWhereInput>;
-  /** All values in which the union is empty */
-  variants_empty?: InputMaybe<Scalars['Boolean']['input']>;
-  /** Matches if the union contains at least one connection to the provided item to the filter */
-  variants_some?: InputMaybe<ProductVariantsWhereInput>;
+  variants_every?: InputMaybe<VariantWhereInput>;
+  variants_none?: InputMaybe<VariantWhereInput>;
+  variants_some?: InputMaybe<VariantWhereInput>;
 };
 
 export type ProductOrderByInput =
@@ -6401,1082 +5652,6 @@ export type ProductSize =
   | 'XL'
   | 'XS';
 
-export type ProductSizeColorVariant = Node & {
-  color: ProductColor;
-  /** The time the document was created */
-  createdAt: Scalars['DateTime']['output'];
-  /** User that created this document */
-  createdBy?: Maybe<User>;
-  /** Get the document in other stages */
-  documentInStages: Array<ProductSizeColorVariant>;
-  /** List of ProductSizeColorVariant versions */
-  history: Array<Version>;
-  /** The unique identifier */
-  id: Scalars['ID']['output'];
-  /** System Locale field */
-  locale: Locale;
-  /** Get the other localizations for this document */
-  localizations: Array<ProductSizeColorVariant>;
-  name: Scalars['String']['output'];
-  product?: Maybe<Product>;
-  /** The time the document was published. Null on documents in draft stage. */
-  publishedAt?: Maybe<Scalars['DateTime']['output']>;
-  /** User that last published this document */
-  publishedBy?: Maybe<User>;
-  scheduledIn: Array<ScheduledOperation>;
-  size: ProductSize;
-  /** System stage field */
-  stage: Stage;
-  /** The time the document was updated */
-  updatedAt: Scalars['DateTime']['output'];
-  /** User that last updated this document */
-  updatedBy?: Maybe<User>;
-};
-
-
-export type ProductSizeColorVariantCreatedAtArgs = {
-  variation?: SystemDateTimeFieldVariation;
-};
-
-
-export type ProductSizeColorVariantCreatedByArgs = {
-  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
-  locales?: InputMaybe<Array<Locale>>;
-};
-
-
-export type ProductSizeColorVariantDocumentInStagesArgs = {
-  includeCurrent?: Scalars['Boolean']['input'];
-  inheritLocale?: Scalars['Boolean']['input'];
-  stages?: Array<Stage>;
-};
-
-
-export type ProductSizeColorVariantHistoryArgs = {
-  limit?: Scalars['Int']['input'];
-  skip?: Scalars['Int']['input'];
-  stageOverride?: InputMaybe<Stage>;
-};
-
-
-export type ProductSizeColorVariantLocalizationsArgs = {
-  includeCurrent?: Scalars['Boolean']['input'];
-  locales?: Array<Locale>;
-};
-
-
-export type ProductSizeColorVariantProductArgs = {
-  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
-  locales?: InputMaybe<Array<Locale>>;
-};
-
-
-export type ProductSizeColorVariantPublishedAtArgs = {
-  variation?: SystemDateTimeFieldVariation;
-};
-
-
-export type ProductSizeColorVariantPublishedByArgs = {
-  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
-  locales?: InputMaybe<Array<Locale>>;
-};
-
-
-export type ProductSizeColorVariantScheduledInArgs = {
-  after?: InputMaybe<Scalars['String']['input']>;
-  before?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
-  last?: InputMaybe<Scalars['Int']['input']>;
-  locales?: InputMaybe<Array<Locale>>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  where?: InputMaybe<ScheduledOperationWhereInput>;
-};
-
-
-export type ProductSizeColorVariantUpdatedAtArgs = {
-  variation?: SystemDateTimeFieldVariation;
-};
-
-
-export type ProductSizeColorVariantUpdatedByArgs = {
-  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
-  locales?: InputMaybe<Array<Locale>>;
-};
-
-export type ProductSizeColorVariantConnectInput = {
-  /** Allow to specify document position in list of connected documents, will default to appending at end of list */
-  position?: InputMaybe<ConnectPositionInput>;
-  /** Document to connect */
-  where: ProductSizeColorVariantWhereUniqueInput;
-};
-
-/** A connection to a list of items. */
-export type ProductSizeColorVariantConnection = {
-  aggregate: Aggregate;
-  /** A list of edges. */
-  edges: Array<ProductSizeColorVariantEdge>;
-  /** Information to aid in pagination. */
-  pageInfo: PageInfo;
-};
-
-export type ProductSizeColorVariantCreateInput = {
-  color: ProductColor;
-  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** Inline mutations for managing document localizations excluding the default locale */
-  localizations?: InputMaybe<ProductSizeColorVariantCreateLocalizationsInput>;
-  /** name input for default locale (en) */
-  name: Scalars['String']['input'];
-  product?: InputMaybe<ProductCreateOneInlineInput>;
-  size: ProductSize;
-  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
-};
-
-export type ProductSizeColorVariantCreateLocalizationDataInput = {
-  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
-  name: Scalars['String']['input'];
-  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
-};
-
-export type ProductSizeColorVariantCreateLocalizationInput = {
-  /** Localization input */
-  data: ProductSizeColorVariantCreateLocalizationDataInput;
-  locale: Locale;
-};
-
-export type ProductSizeColorVariantCreateLocalizationsInput = {
-  /** Create localizations for the newly-created document */
-  create?: InputMaybe<Array<ProductSizeColorVariantCreateLocalizationInput>>;
-};
-
-export type ProductSizeColorVariantCreateManyInlineInput = {
-  /** Connect multiple existing ProductSizeColorVariant documents */
-  connect?: InputMaybe<Array<ProductSizeColorVariantWhereUniqueInput>>;
-  /** Create and connect multiple existing ProductSizeColorVariant documents */
-  create?: InputMaybe<Array<ProductSizeColorVariantCreateInput>>;
-};
-
-export type ProductSizeColorVariantCreateOneInlineInput = {
-  /** Connect one existing ProductSizeColorVariant document */
-  connect?: InputMaybe<ProductSizeColorVariantWhereUniqueInput>;
-  /** Create and connect one ProductSizeColorVariant document */
-  create?: InputMaybe<ProductSizeColorVariantCreateInput>;
-};
-
-/** An edge in a connection. */
-export type ProductSizeColorVariantEdge = {
-  /** A cursor for use in pagination. */
-  cursor: Scalars['String']['output'];
-  /** The item at the end of the edge. */
-  node: ProductSizeColorVariant;
-};
-
-/** Identifies documents */
-export type ProductSizeColorVariantManyWhereInput = {
-  /** Logical AND on all given filters. */
-  AND?: InputMaybe<Array<ProductSizeColorVariantWhereInput>>;
-  /** Logical NOT on all given filters combined by AND. */
-  NOT?: InputMaybe<Array<ProductSizeColorVariantWhereInput>>;
-  /** Logical OR on all given filters. */
-  OR?: InputMaybe<Array<ProductSizeColorVariantWhereInput>>;
-  /** Contains search across all appropriate fields. */
-  _search?: InputMaybe<Scalars['String']['input']>;
-  color?: InputMaybe<ProductColor>;
-  /** All values that are contained in given list. */
-  color_in?: InputMaybe<Array<InputMaybe<ProductColor>>>;
-  /** Any other value that exists and is not equal to the given value. */
-  color_not?: InputMaybe<ProductColor>;
-  /** All values that are not contained in given list. */
-  color_not_in?: InputMaybe<Array<InputMaybe<ProductColor>>>;
-  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than the given value. */
-  createdAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than or equal the given value. */
-  createdAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are contained in given list. */
-  createdAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  /** All values less than the given value. */
-  createdAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values less than or equal the given value. */
-  createdAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** Any other value that exists and is not equal to the given value. */
-  createdAt_not?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are not contained in given list. */
-  createdAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  createdBy?: InputMaybe<UserWhereInput>;
-  documentInStages_every?: InputMaybe<ProductSizeColorVariantWhereStageInput>;
-  documentInStages_none?: InputMaybe<ProductSizeColorVariantWhereStageInput>;
-  documentInStages_some?: InputMaybe<ProductSizeColorVariantWhereStageInput>;
-  id?: InputMaybe<Scalars['ID']['input']>;
-  /** All values containing the given string. */
-  id_contains?: InputMaybe<Scalars['ID']['input']>;
-  /** All values ending with the given string. */
-  id_ends_with?: InputMaybe<Scalars['ID']['input']>;
-  /** All values that are contained in given list. */
-  id_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** Any other value that exists and is not equal to the given value. */
-  id_not?: InputMaybe<Scalars['ID']['input']>;
-  /** All values not containing the given string. */
-  id_not_contains?: InputMaybe<Scalars['ID']['input']>;
-  /** All values not ending with the given string */
-  id_not_ends_with?: InputMaybe<Scalars['ID']['input']>;
-  /** All values that are not contained in given list. */
-  id_not_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** All values not starting with the given string. */
-  id_not_starts_with?: InputMaybe<Scalars['ID']['input']>;
-  /** All values starting with the given string. */
-  id_starts_with?: InputMaybe<Scalars['ID']['input']>;
-  product?: InputMaybe<ProductWhereInput>;
-  publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than the given value. */
-  publishedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than or equal the given value. */
-  publishedAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are contained in given list. */
-  publishedAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  /** All values less than the given value. */
-  publishedAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values less than or equal the given value. */
-  publishedAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** Any other value that exists and is not equal to the given value. */
-  publishedAt_not?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are not contained in given list. */
-  publishedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  publishedBy?: InputMaybe<UserWhereInput>;
-  scheduledIn_every?: InputMaybe<ScheduledOperationWhereInput>;
-  scheduledIn_none?: InputMaybe<ScheduledOperationWhereInput>;
-  scheduledIn_some?: InputMaybe<ScheduledOperationWhereInput>;
-  size?: InputMaybe<ProductSize>;
-  /** All values that are contained in given list. */
-  size_in?: InputMaybe<Array<InputMaybe<ProductSize>>>;
-  /** Any other value that exists and is not equal to the given value. */
-  size_not?: InputMaybe<ProductSize>;
-  /** All values that are not contained in given list. */
-  size_not_in?: InputMaybe<Array<InputMaybe<ProductSize>>>;
-  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than the given value. */
-  updatedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than or equal the given value. */
-  updatedAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are contained in given list. */
-  updatedAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  /** All values less than the given value. */
-  updatedAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values less than or equal the given value. */
-  updatedAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** Any other value that exists and is not equal to the given value. */
-  updatedAt_not?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are not contained in given list. */
-  updatedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  updatedBy?: InputMaybe<UserWhereInput>;
-};
-
-export type ProductSizeColorVariantOrderByInput =
-  | 'color_ASC'
-  | 'color_DESC'
-  | 'createdAt_ASC'
-  | 'createdAt_DESC'
-  | 'id_ASC'
-  | 'id_DESC'
-  | 'name_ASC'
-  | 'name_DESC'
-  | 'publishedAt_ASC'
-  | 'publishedAt_DESC'
-  | 'size_ASC'
-  | 'size_DESC'
-  | 'updatedAt_ASC'
-  | 'updatedAt_DESC';
-
-export type ProductSizeColorVariantUpdateInput = {
-  color?: InputMaybe<ProductColor>;
-  /** Manage document localizations */
-  localizations?: InputMaybe<ProductSizeColorVariantUpdateLocalizationsInput>;
-  /** name input for default locale (en) */
-  name?: InputMaybe<Scalars['String']['input']>;
-  product?: InputMaybe<ProductUpdateOneInlineInput>;
-  size?: InputMaybe<ProductSize>;
-};
-
-export type ProductSizeColorVariantUpdateLocalizationDataInput = {
-  name?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type ProductSizeColorVariantUpdateLocalizationInput = {
-  data: ProductSizeColorVariantUpdateLocalizationDataInput;
-  locale: Locale;
-};
-
-export type ProductSizeColorVariantUpdateLocalizationsInput = {
-  /** Localizations to create */
-  create?: InputMaybe<Array<ProductSizeColorVariantCreateLocalizationInput>>;
-  /** Localizations to delete */
-  delete?: InputMaybe<Array<Locale>>;
-  /** Localizations to update */
-  update?: InputMaybe<Array<ProductSizeColorVariantUpdateLocalizationInput>>;
-  upsert?: InputMaybe<Array<ProductSizeColorVariantUpsertLocalizationInput>>;
-};
-
-export type ProductSizeColorVariantUpdateManyInlineInput = {
-  /** Connect multiple existing ProductSizeColorVariant documents */
-  connect?: InputMaybe<Array<ProductSizeColorVariantConnectInput>>;
-  /** Create and connect multiple ProductSizeColorVariant documents */
-  create?: InputMaybe<Array<ProductSizeColorVariantCreateInput>>;
-  /** Delete multiple ProductSizeColorVariant documents */
-  delete?: InputMaybe<Array<ProductSizeColorVariantWhereUniqueInput>>;
-  /** Disconnect multiple ProductSizeColorVariant documents */
-  disconnect?: InputMaybe<Array<ProductSizeColorVariantWhereUniqueInput>>;
-  /** Override currently-connected documents with multiple existing ProductSizeColorVariant documents */
-  set?: InputMaybe<Array<ProductSizeColorVariantWhereUniqueInput>>;
-  /** Update multiple ProductSizeColorVariant documents */
-  update?: InputMaybe<Array<ProductSizeColorVariantUpdateWithNestedWhereUniqueInput>>;
-  /** Upsert multiple ProductSizeColorVariant documents */
-  upsert?: InputMaybe<Array<ProductSizeColorVariantUpsertWithNestedWhereUniqueInput>>;
-};
-
-export type ProductSizeColorVariantUpdateManyInput = {
-  color?: InputMaybe<ProductColor>;
-  /** Optional updates to localizations */
-  localizations?: InputMaybe<ProductSizeColorVariantUpdateManyLocalizationsInput>;
-  /** name input for default locale (en) */
-  name?: InputMaybe<Scalars['String']['input']>;
-  size?: InputMaybe<ProductSize>;
-};
-
-export type ProductSizeColorVariantUpdateManyLocalizationDataInput = {
-  name?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type ProductSizeColorVariantUpdateManyLocalizationInput = {
-  data: ProductSizeColorVariantUpdateManyLocalizationDataInput;
-  locale: Locale;
-};
-
-export type ProductSizeColorVariantUpdateManyLocalizationsInput = {
-  /** Localizations to update */
-  update?: InputMaybe<Array<ProductSizeColorVariantUpdateManyLocalizationInput>>;
-};
-
-export type ProductSizeColorVariantUpdateManyWithNestedWhereInput = {
-  /** Update many input */
-  data: ProductSizeColorVariantUpdateManyInput;
-  /** Document search */
-  where: ProductSizeColorVariantWhereInput;
-};
-
-export type ProductSizeColorVariantUpdateOneInlineInput = {
-  /** Connect existing ProductSizeColorVariant document */
-  connect?: InputMaybe<ProductSizeColorVariantWhereUniqueInput>;
-  /** Create and connect one ProductSizeColorVariant document */
-  create?: InputMaybe<ProductSizeColorVariantCreateInput>;
-  /** Delete currently connected ProductSizeColorVariant document */
-  delete?: InputMaybe<Scalars['Boolean']['input']>;
-  /** Disconnect currently connected ProductSizeColorVariant document */
-  disconnect?: InputMaybe<Scalars['Boolean']['input']>;
-  /** Update single ProductSizeColorVariant document */
-  update?: InputMaybe<ProductSizeColorVariantUpdateWithNestedWhereUniqueInput>;
-  /** Upsert single ProductSizeColorVariant document */
-  upsert?: InputMaybe<ProductSizeColorVariantUpsertWithNestedWhereUniqueInput>;
-};
-
-export type ProductSizeColorVariantUpdateWithNestedWhereUniqueInput = {
-  /** Document to update */
-  data: ProductSizeColorVariantUpdateInput;
-  /** Unique document search */
-  where: ProductSizeColorVariantWhereUniqueInput;
-};
-
-export type ProductSizeColorVariantUpsertInput = {
-  /** Create document if it didn't exist */
-  create: ProductSizeColorVariantCreateInput;
-  /** Update document if it exists */
-  update: ProductSizeColorVariantUpdateInput;
-};
-
-export type ProductSizeColorVariantUpsertLocalizationInput = {
-  create: ProductSizeColorVariantCreateLocalizationDataInput;
-  locale: Locale;
-  update: ProductSizeColorVariantUpdateLocalizationDataInput;
-};
-
-export type ProductSizeColorVariantUpsertWithNestedWhereUniqueInput = {
-  /** Upsert data */
-  data: ProductSizeColorVariantUpsertInput;
-  /** Unique document search */
-  where: ProductSizeColorVariantWhereUniqueInput;
-};
-
-/** This contains a set of filters that can be used to compare values internally */
-export type ProductSizeColorVariantWhereComparatorInput = {
-  /** This field can be used to request to check if the entry is outdated by internal comparison */
-  outdated_to?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-/** Identifies documents */
-export type ProductSizeColorVariantWhereInput = {
-  /** Logical AND on all given filters. */
-  AND?: InputMaybe<Array<ProductSizeColorVariantWhereInput>>;
-  /** Logical NOT on all given filters combined by AND. */
-  NOT?: InputMaybe<Array<ProductSizeColorVariantWhereInput>>;
-  /** Logical OR on all given filters. */
-  OR?: InputMaybe<Array<ProductSizeColorVariantWhereInput>>;
-  /** Contains search across all appropriate fields. */
-  _search?: InputMaybe<Scalars['String']['input']>;
-  color?: InputMaybe<ProductColor>;
-  /** All values that are contained in given list. */
-  color_in?: InputMaybe<Array<InputMaybe<ProductColor>>>;
-  /** Any other value that exists and is not equal to the given value. */
-  color_not?: InputMaybe<ProductColor>;
-  /** All values that are not contained in given list. */
-  color_not_in?: InputMaybe<Array<InputMaybe<ProductColor>>>;
-  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than the given value. */
-  createdAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than or equal the given value. */
-  createdAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are contained in given list. */
-  createdAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  /** All values less than the given value. */
-  createdAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values less than or equal the given value. */
-  createdAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** Any other value that exists and is not equal to the given value. */
-  createdAt_not?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are not contained in given list. */
-  createdAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  createdBy?: InputMaybe<UserWhereInput>;
-  documentInStages_every?: InputMaybe<ProductSizeColorVariantWhereStageInput>;
-  documentInStages_none?: InputMaybe<ProductSizeColorVariantWhereStageInput>;
-  documentInStages_some?: InputMaybe<ProductSizeColorVariantWhereStageInput>;
-  id?: InputMaybe<Scalars['ID']['input']>;
-  /** All values containing the given string. */
-  id_contains?: InputMaybe<Scalars['ID']['input']>;
-  /** All values ending with the given string. */
-  id_ends_with?: InputMaybe<Scalars['ID']['input']>;
-  /** All values that are contained in given list. */
-  id_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** Any other value that exists and is not equal to the given value. */
-  id_not?: InputMaybe<Scalars['ID']['input']>;
-  /** All values not containing the given string. */
-  id_not_contains?: InputMaybe<Scalars['ID']['input']>;
-  /** All values not ending with the given string */
-  id_not_ends_with?: InputMaybe<Scalars['ID']['input']>;
-  /** All values that are not contained in given list. */
-  id_not_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** All values not starting with the given string. */
-  id_not_starts_with?: InputMaybe<Scalars['ID']['input']>;
-  /** All values starting with the given string. */
-  id_starts_with?: InputMaybe<Scalars['ID']['input']>;
-  name?: InputMaybe<Scalars['String']['input']>;
-  /** All values containing the given string. */
-  name_contains?: InputMaybe<Scalars['String']['input']>;
-  /** All values ending with the given string. */
-  name_ends_with?: InputMaybe<Scalars['String']['input']>;
-  /** All values that are contained in given list. */
-  name_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  /** Any other value that exists and is not equal to the given value. */
-  name_not?: InputMaybe<Scalars['String']['input']>;
-  /** All values not containing the given string. */
-  name_not_contains?: InputMaybe<Scalars['String']['input']>;
-  /** All values not ending with the given string */
-  name_not_ends_with?: InputMaybe<Scalars['String']['input']>;
-  /** All values that are not contained in given list. */
-  name_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  /** All values not starting with the given string. */
-  name_not_starts_with?: InputMaybe<Scalars['String']['input']>;
-  /** All values starting with the given string. */
-  name_starts_with?: InputMaybe<Scalars['String']['input']>;
-  product?: InputMaybe<ProductWhereInput>;
-  publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than the given value. */
-  publishedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than or equal the given value. */
-  publishedAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are contained in given list. */
-  publishedAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  /** All values less than the given value. */
-  publishedAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values less than or equal the given value. */
-  publishedAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** Any other value that exists and is not equal to the given value. */
-  publishedAt_not?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are not contained in given list. */
-  publishedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  publishedBy?: InputMaybe<UserWhereInput>;
-  scheduledIn_every?: InputMaybe<ScheduledOperationWhereInput>;
-  scheduledIn_none?: InputMaybe<ScheduledOperationWhereInput>;
-  scheduledIn_some?: InputMaybe<ScheduledOperationWhereInput>;
-  size?: InputMaybe<ProductSize>;
-  /** All values that are contained in given list. */
-  size_in?: InputMaybe<Array<InputMaybe<ProductSize>>>;
-  /** Any other value that exists and is not equal to the given value. */
-  size_not?: InputMaybe<ProductSize>;
-  /** All values that are not contained in given list. */
-  size_not_in?: InputMaybe<Array<InputMaybe<ProductSize>>>;
-  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than the given value. */
-  updatedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than or equal the given value. */
-  updatedAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are contained in given list. */
-  updatedAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  /** All values less than the given value. */
-  updatedAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values less than or equal the given value. */
-  updatedAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** Any other value that exists and is not equal to the given value. */
-  updatedAt_not?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are not contained in given list. */
-  updatedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  updatedBy?: InputMaybe<UserWhereInput>;
-};
-
-/** The document in stages filter allows specifying a stage entry to cross compare the same document between different stages */
-export type ProductSizeColorVariantWhereStageInput = {
-  /** Logical AND on all given filters. */
-  AND?: InputMaybe<Array<ProductSizeColorVariantWhereStageInput>>;
-  /** Logical NOT on all given filters combined by AND. */
-  NOT?: InputMaybe<Array<ProductSizeColorVariantWhereStageInput>>;
-  /** Logical OR on all given filters. */
-  OR?: InputMaybe<Array<ProductSizeColorVariantWhereStageInput>>;
-  /** This field contains fields which can be set as true or false to specify an internal comparison */
-  compareWithParent?: InputMaybe<ProductSizeColorVariantWhereComparatorInput>;
-  /** Specify the stage to compare with */
-  stage?: InputMaybe<Stage>;
-};
-
-/** References ProductSizeColorVariant record uniquely */
-export type ProductSizeColorVariantWhereUniqueInput = {
-  id?: InputMaybe<Scalars['ID']['input']>;
-};
-
-export type ProductSizeVariant = Node & {
-  /** The time the document was created */
-  createdAt: Scalars['DateTime']['output'];
-  /** User that created this document */
-  createdBy?: Maybe<User>;
-  /** Get the document in other stages */
-  documentInStages: Array<ProductSizeVariant>;
-  /** List of ProductSizeVariant versions */
-  history: Array<Version>;
-  /** The unique identifier */
-  id: Scalars['ID']['output'];
-  /** System Locale field */
-  locale: Locale;
-  /** Get the other localizations for this document */
-  localizations: Array<ProductSizeVariant>;
-  name: Scalars['String']['output'];
-  product?: Maybe<Product>;
-  /** The time the document was published. Null on documents in draft stage. */
-  publishedAt?: Maybe<Scalars['DateTime']['output']>;
-  /** User that last published this document */
-  publishedBy?: Maybe<User>;
-  scheduledIn: Array<ScheduledOperation>;
-  size: ProductSize;
-  /** System stage field */
-  stage: Stage;
-  /** The time the document was updated */
-  updatedAt: Scalars['DateTime']['output'];
-  /** User that last updated this document */
-  updatedBy?: Maybe<User>;
-};
-
-
-export type ProductSizeVariantCreatedAtArgs = {
-  variation?: SystemDateTimeFieldVariation;
-};
-
-
-export type ProductSizeVariantCreatedByArgs = {
-  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
-  locales?: InputMaybe<Array<Locale>>;
-};
-
-
-export type ProductSizeVariantDocumentInStagesArgs = {
-  includeCurrent?: Scalars['Boolean']['input'];
-  inheritLocale?: Scalars['Boolean']['input'];
-  stages?: Array<Stage>;
-};
-
-
-export type ProductSizeVariantHistoryArgs = {
-  limit?: Scalars['Int']['input'];
-  skip?: Scalars['Int']['input'];
-  stageOverride?: InputMaybe<Stage>;
-};
-
-
-export type ProductSizeVariantLocalizationsArgs = {
-  includeCurrent?: Scalars['Boolean']['input'];
-  locales?: Array<Locale>;
-};
-
-
-export type ProductSizeVariantProductArgs = {
-  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
-  locales?: InputMaybe<Array<Locale>>;
-};
-
-
-export type ProductSizeVariantPublishedAtArgs = {
-  variation?: SystemDateTimeFieldVariation;
-};
-
-
-export type ProductSizeVariantPublishedByArgs = {
-  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
-  locales?: InputMaybe<Array<Locale>>;
-};
-
-
-export type ProductSizeVariantScheduledInArgs = {
-  after?: InputMaybe<Scalars['String']['input']>;
-  before?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
-  last?: InputMaybe<Scalars['Int']['input']>;
-  locales?: InputMaybe<Array<Locale>>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  where?: InputMaybe<ScheduledOperationWhereInput>;
-};
-
-
-export type ProductSizeVariantUpdatedAtArgs = {
-  variation?: SystemDateTimeFieldVariation;
-};
-
-
-export type ProductSizeVariantUpdatedByArgs = {
-  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
-  locales?: InputMaybe<Array<Locale>>;
-};
-
-export type ProductSizeVariantConnectInput = {
-  /** Allow to specify document position in list of connected documents, will default to appending at end of list */
-  position?: InputMaybe<ConnectPositionInput>;
-  /** Document to connect */
-  where: ProductSizeVariantWhereUniqueInput;
-};
-
-/** A connection to a list of items. */
-export type ProductSizeVariantConnection = {
-  aggregate: Aggregate;
-  /** A list of edges. */
-  edges: Array<ProductSizeVariantEdge>;
-  /** Information to aid in pagination. */
-  pageInfo: PageInfo;
-};
-
-export type ProductSizeVariantCreateInput = {
-  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** Inline mutations for managing document localizations excluding the default locale */
-  localizations?: InputMaybe<ProductSizeVariantCreateLocalizationsInput>;
-  /** name input for default locale (en) */
-  name: Scalars['String']['input'];
-  product?: InputMaybe<ProductCreateOneInlineInput>;
-  size: ProductSize;
-  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
-};
-
-export type ProductSizeVariantCreateLocalizationDataInput = {
-  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
-  name: Scalars['String']['input'];
-  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
-};
-
-export type ProductSizeVariantCreateLocalizationInput = {
-  /** Localization input */
-  data: ProductSizeVariantCreateLocalizationDataInput;
-  locale: Locale;
-};
-
-export type ProductSizeVariantCreateLocalizationsInput = {
-  /** Create localizations for the newly-created document */
-  create?: InputMaybe<Array<ProductSizeVariantCreateLocalizationInput>>;
-};
-
-export type ProductSizeVariantCreateManyInlineInput = {
-  /** Connect multiple existing ProductSizeVariant documents */
-  connect?: InputMaybe<Array<ProductSizeVariantWhereUniqueInput>>;
-  /** Create and connect multiple existing ProductSizeVariant documents */
-  create?: InputMaybe<Array<ProductSizeVariantCreateInput>>;
-};
-
-export type ProductSizeVariantCreateOneInlineInput = {
-  /** Connect one existing ProductSizeVariant document */
-  connect?: InputMaybe<ProductSizeVariantWhereUniqueInput>;
-  /** Create and connect one ProductSizeVariant document */
-  create?: InputMaybe<ProductSizeVariantCreateInput>;
-};
-
-/** An edge in a connection. */
-export type ProductSizeVariantEdge = {
-  /** A cursor for use in pagination. */
-  cursor: Scalars['String']['output'];
-  /** The item at the end of the edge. */
-  node: ProductSizeVariant;
-};
-
-/** Identifies documents */
-export type ProductSizeVariantManyWhereInput = {
-  /** Logical AND on all given filters. */
-  AND?: InputMaybe<Array<ProductSizeVariantWhereInput>>;
-  /** Logical NOT on all given filters combined by AND. */
-  NOT?: InputMaybe<Array<ProductSizeVariantWhereInput>>;
-  /** Logical OR on all given filters. */
-  OR?: InputMaybe<Array<ProductSizeVariantWhereInput>>;
-  /** Contains search across all appropriate fields. */
-  _search?: InputMaybe<Scalars['String']['input']>;
-  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than the given value. */
-  createdAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than or equal the given value. */
-  createdAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are contained in given list. */
-  createdAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  /** All values less than the given value. */
-  createdAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values less than or equal the given value. */
-  createdAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** Any other value that exists and is not equal to the given value. */
-  createdAt_not?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are not contained in given list. */
-  createdAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  createdBy?: InputMaybe<UserWhereInput>;
-  documentInStages_every?: InputMaybe<ProductSizeVariantWhereStageInput>;
-  documentInStages_none?: InputMaybe<ProductSizeVariantWhereStageInput>;
-  documentInStages_some?: InputMaybe<ProductSizeVariantWhereStageInput>;
-  id?: InputMaybe<Scalars['ID']['input']>;
-  /** All values containing the given string. */
-  id_contains?: InputMaybe<Scalars['ID']['input']>;
-  /** All values ending with the given string. */
-  id_ends_with?: InputMaybe<Scalars['ID']['input']>;
-  /** All values that are contained in given list. */
-  id_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** Any other value that exists and is not equal to the given value. */
-  id_not?: InputMaybe<Scalars['ID']['input']>;
-  /** All values not containing the given string. */
-  id_not_contains?: InputMaybe<Scalars['ID']['input']>;
-  /** All values not ending with the given string */
-  id_not_ends_with?: InputMaybe<Scalars['ID']['input']>;
-  /** All values that are not contained in given list. */
-  id_not_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** All values not starting with the given string. */
-  id_not_starts_with?: InputMaybe<Scalars['ID']['input']>;
-  /** All values starting with the given string. */
-  id_starts_with?: InputMaybe<Scalars['ID']['input']>;
-  product?: InputMaybe<ProductWhereInput>;
-  publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than the given value. */
-  publishedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than or equal the given value. */
-  publishedAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are contained in given list. */
-  publishedAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  /** All values less than the given value. */
-  publishedAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values less than or equal the given value. */
-  publishedAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** Any other value that exists and is not equal to the given value. */
-  publishedAt_not?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are not contained in given list. */
-  publishedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  publishedBy?: InputMaybe<UserWhereInput>;
-  scheduledIn_every?: InputMaybe<ScheduledOperationWhereInput>;
-  scheduledIn_none?: InputMaybe<ScheduledOperationWhereInput>;
-  scheduledIn_some?: InputMaybe<ScheduledOperationWhereInput>;
-  size?: InputMaybe<ProductSize>;
-  /** All values that are contained in given list. */
-  size_in?: InputMaybe<Array<InputMaybe<ProductSize>>>;
-  /** Any other value that exists and is not equal to the given value. */
-  size_not?: InputMaybe<ProductSize>;
-  /** All values that are not contained in given list. */
-  size_not_in?: InputMaybe<Array<InputMaybe<ProductSize>>>;
-  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than the given value. */
-  updatedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than or equal the given value. */
-  updatedAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are contained in given list. */
-  updatedAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  /** All values less than the given value. */
-  updatedAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values less than or equal the given value. */
-  updatedAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** Any other value that exists and is not equal to the given value. */
-  updatedAt_not?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are not contained in given list. */
-  updatedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  updatedBy?: InputMaybe<UserWhereInput>;
-};
-
-export type ProductSizeVariantOrderByInput =
-  | 'createdAt_ASC'
-  | 'createdAt_DESC'
-  | 'id_ASC'
-  | 'id_DESC'
-  | 'name_ASC'
-  | 'name_DESC'
-  | 'publishedAt_ASC'
-  | 'publishedAt_DESC'
-  | 'size_ASC'
-  | 'size_DESC'
-  | 'updatedAt_ASC'
-  | 'updatedAt_DESC';
-
-export type ProductSizeVariantUpdateInput = {
-  /** Manage document localizations */
-  localizations?: InputMaybe<ProductSizeVariantUpdateLocalizationsInput>;
-  /** name input for default locale (en) */
-  name?: InputMaybe<Scalars['String']['input']>;
-  product?: InputMaybe<ProductUpdateOneInlineInput>;
-  size?: InputMaybe<ProductSize>;
-};
-
-export type ProductSizeVariantUpdateLocalizationDataInput = {
-  name?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type ProductSizeVariantUpdateLocalizationInput = {
-  data: ProductSizeVariantUpdateLocalizationDataInput;
-  locale: Locale;
-};
-
-export type ProductSizeVariantUpdateLocalizationsInput = {
-  /** Localizations to create */
-  create?: InputMaybe<Array<ProductSizeVariantCreateLocalizationInput>>;
-  /** Localizations to delete */
-  delete?: InputMaybe<Array<Locale>>;
-  /** Localizations to update */
-  update?: InputMaybe<Array<ProductSizeVariantUpdateLocalizationInput>>;
-  upsert?: InputMaybe<Array<ProductSizeVariantUpsertLocalizationInput>>;
-};
-
-export type ProductSizeVariantUpdateManyInlineInput = {
-  /** Connect multiple existing ProductSizeVariant documents */
-  connect?: InputMaybe<Array<ProductSizeVariantConnectInput>>;
-  /** Create and connect multiple ProductSizeVariant documents */
-  create?: InputMaybe<Array<ProductSizeVariantCreateInput>>;
-  /** Delete multiple ProductSizeVariant documents */
-  delete?: InputMaybe<Array<ProductSizeVariantWhereUniqueInput>>;
-  /** Disconnect multiple ProductSizeVariant documents */
-  disconnect?: InputMaybe<Array<ProductSizeVariantWhereUniqueInput>>;
-  /** Override currently-connected documents with multiple existing ProductSizeVariant documents */
-  set?: InputMaybe<Array<ProductSizeVariantWhereUniqueInput>>;
-  /** Update multiple ProductSizeVariant documents */
-  update?: InputMaybe<Array<ProductSizeVariantUpdateWithNestedWhereUniqueInput>>;
-  /** Upsert multiple ProductSizeVariant documents */
-  upsert?: InputMaybe<Array<ProductSizeVariantUpsertWithNestedWhereUniqueInput>>;
-};
-
-export type ProductSizeVariantUpdateManyInput = {
-  /** Optional updates to localizations */
-  localizations?: InputMaybe<ProductSizeVariantUpdateManyLocalizationsInput>;
-  /** name input for default locale (en) */
-  name?: InputMaybe<Scalars['String']['input']>;
-  size?: InputMaybe<ProductSize>;
-};
-
-export type ProductSizeVariantUpdateManyLocalizationDataInput = {
-  name?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type ProductSizeVariantUpdateManyLocalizationInput = {
-  data: ProductSizeVariantUpdateManyLocalizationDataInput;
-  locale: Locale;
-};
-
-export type ProductSizeVariantUpdateManyLocalizationsInput = {
-  /** Localizations to update */
-  update?: InputMaybe<Array<ProductSizeVariantUpdateManyLocalizationInput>>;
-};
-
-export type ProductSizeVariantUpdateManyWithNestedWhereInput = {
-  /** Update many input */
-  data: ProductSizeVariantUpdateManyInput;
-  /** Document search */
-  where: ProductSizeVariantWhereInput;
-};
-
-export type ProductSizeVariantUpdateOneInlineInput = {
-  /** Connect existing ProductSizeVariant document */
-  connect?: InputMaybe<ProductSizeVariantWhereUniqueInput>;
-  /** Create and connect one ProductSizeVariant document */
-  create?: InputMaybe<ProductSizeVariantCreateInput>;
-  /** Delete currently connected ProductSizeVariant document */
-  delete?: InputMaybe<Scalars['Boolean']['input']>;
-  /** Disconnect currently connected ProductSizeVariant document */
-  disconnect?: InputMaybe<Scalars['Boolean']['input']>;
-  /** Update single ProductSizeVariant document */
-  update?: InputMaybe<ProductSizeVariantUpdateWithNestedWhereUniqueInput>;
-  /** Upsert single ProductSizeVariant document */
-  upsert?: InputMaybe<ProductSizeVariantUpsertWithNestedWhereUniqueInput>;
-};
-
-export type ProductSizeVariantUpdateWithNestedWhereUniqueInput = {
-  /** Document to update */
-  data: ProductSizeVariantUpdateInput;
-  /** Unique document search */
-  where: ProductSizeVariantWhereUniqueInput;
-};
-
-export type ProductSizeVariantUpsertInput = {
-  /** Create document if it didn't exist */
-  create: ProductSizeVariantCreateInput;
-  /** Update document if it exists */
-  update: ProductSizeVariantUpdateInput;
-};
-
-export type ProductSizeVariantUpsertLocalizationInput = {
-  create: ProductSizeVariantCreateLocalizationDataInput;
-  locale: Locale;
-  update: ProductSizeVariantUpdateLocalizationDataInput;
-};
-
-export type ProductSizeVariantUpsertWithNestedWhereUniqueInput = {
-  /** Upsert data */
-  data: ProductSizeVariantUpsertInput;
-  /** Unique document search */
-  where: ProductSizeVariantWhereUniqueInput;
-};
-
-/** This contains a set of filters that can be used to compare values internally */
-export type ProductSizeVariantWhereComparatorInput = {
-  /** This field can be used to request to check if the entry is outdated by internal comparison */
-  outdated_to?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-/** Identifies documents */
-export type ProductSizeVariantWhereInput = {
-  /** Logical AND on all given filters. */
-  AND?: InputMaybe<Array<ProductSizeVariantWhereInput>>;
-  /** Logical NOT on all given filters combined by AND. */
-  NOT?: InputMaybe<Array<ProductSizeVariantWhereInput>>;
-  /** Logical OR on all given filters. */
-  OR?: InputMaybe<Array<ProductSizeVariantWhereInput>>;
-  /** Contains search across all appropriate fields. */
-  _search?: InputMaybe<Scalars['String']['input']>;
-  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than the given value. */
-  createdAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than or equal the given value. */
-  createdAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are contained in given list. */
-  createdAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  /** All values less than the given value. */
-  createdAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values less than or equal the given value. */
-  createdAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** Any other value that exists and is not equal to the given value. */
-  createdAt_not?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are not contained in given list. */
-  createdAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  createdBy?: InputMaybe<UserWhereInput>;
-  documentInStages_every?: InputMaybe<ProductSizeVariantWhereStageInput>;
-  documentInStages_none?: InputMaybe<ProductSizeVariantWhereStageInput>;
-  documentInStages_some?: InputMaybe<ProductSizeVariantWhereStageInput>;
-  id?: InputMaybe<Scalars['ID']['input']>;
-  /** All values containing the given string. */
-  id_contains?: InputMaybe<Scalars['ID']['input']>;
-  /** All values ending with the given string. */
-  id_ends_with?: InputMaybe<Scalars['ID']['input']>;
-  /** All values that are contained in given list. */
-  id_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** Any other value that exists and is not equal to the given value. */
-  id_not?: InputMaybe<Scalars['ID']['input']>;
-  /** All values not containing the given string. */
-  id_not_contains?: InputMaybe<Scalars['ID']['input']>;
-  /** All values not ending with the given string */
-  id_not_ends_with?: InputMaybe<Scalars['ID']['input']>;
-  /** All values that are not contained in given list. */
-  id_not_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** All values not starting with the given string. */
-  id_not_starts_with?: InputMaybe<Scalars['ID']['input']>;
-  /** All values starting with the given string. */
-  id_starts_with?: InputMaybe<Scalars['ID']['input']>;
-  name?: InputMaybe<Scalars['String']['input']>;
-  /** All values containing the given string. */
-  name_contains?: InputMaybe<Scalars['String']['input']>;
-  /** All values ending with the given string. */
-  name_ends_with?: InputMaybe<Scalars['String']['input']>;
-  /** All values that are contained in given list. */
-  name_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  /** Any other value that exists and is not equal to the given value. */
-  name_not?: InputMaybe<Scalars['String']['input']>;
-  /** All values not containing the given string. */
-  name_not_contains?: InputMaybe<Scalars['String']['input']>;
-  /** All values not ending with the given string */
-  name_not_ends_with?: InputMaybe<Scalars['String']['input']>;
-  /** All values that are not contained in given list. */
-  name_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  /** All values not starting with the given string. */
-  name_not_starts_with?: InputMaybe<Scalars['String']['input']>;
-  /** All values starting with the given string. */
-  name_starts_with?: InputMaybe<Scalars['String']['input']>;
-  product?: InputMaybe<ProductWhereInput>;
-  publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than the given value. */
-  publishedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than or equal the given value. */
-  publishedAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are contained in given list. */
-  publishedAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  /** All values less than the given value. */
-  publishedAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values less than or equal the given value. */
-  publishedAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** Any other value that exists and is not equal to the given value. */
-  publishedAt_not?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are not contained in given list. */
-  publishedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  publishedBy?: InputMaybe<UserWhereInput>;
-  scheduledIn_every?: InputMaybe<ScheduledOperationWhereInput>;
-  scheduledIn_none?: InputMaybe<ScheduledOperationWhereInput>;
-  scheduledIn_some?: InputMaybe<ScheduledOperationWhereInput>;
-  size?: InputMaybe<ProductSize>;
-  /** All values that are contained in given list. */
-  size_in?: InputMaybe<Array<InputMaybe<ProductSize>>>;
-  /** Any other value that exists and is not equal to the given value. */
-  size_not?: InputMaybe<ProductSize>;
-  /** All values that are not contained in given list. */
-  size_not_in?: InputMaybe<Array<InputMaybe<ProductSize>>>;
-  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than the given value. */
-  updatedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values greater than or equal the given value. */
-  updatedAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are contained in given list. */
-  updatedAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  /** All values less than the given value. */
-  updatedAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values less than or equal the given value. */
-  updatedAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
-  /** Any other value that exists and is not equal to the given value. */
-  updatedAt_not?: InputMaybe<Scalars['DateTime']['input']>;
-  /** All values that are not contained in given list. */
-  updatedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  updatedBy?: InputMaybe<UserWhereInput>;
-};
-
-/** The document in stages filter allows specifying a stage entry to cross compare the same document between different stages */
-export type ProductSizeVariantWhereStageInput = {
-  /** Logical AND on all given filters. */
-  AND?: InputMaybe<Array<ProductSizeVariantWhereStageInput>>;
-  /** Logical NOT on all given filters combined by AND. */
-  NOT?: InputMaybe<Array<ProductSizeVariantWhereStageInput>>;
-  /** Logical OR on all given filters. */
-  OR?: InputMaybe<Array<ProductSizeVariantWhereStageInput>>;
-  /** This field contains fields which can be set as true or false to specify an internal comparison */
-  compareWithParent?: InputMaybe<ProductSizeVariantWhereComparatorInput>;
-  /** Specify the stage to compare with */
-  stage?: InputMaybe<Stage>;
-};
-
-/** References ProductSizeVariant record uniquely */
-export type ProductSizeVariantWhereUniqueInput = {
-  id?: InputMaybe<Scalars['ID']['input']>;
-};
-
 export type ProductUpdateInput = {
   categories?: InputMaybe<CategoryUpdateManyInlineInput>;
   collections?: InputMaybe<CollectionUpdateManyInlineInput>;
@@ -7493,7 +5668,7 @@ export type ProductUpdateInput = {
   reviews?: InputMaybe<ReviewUpdateManyInlineInput>;
   /** slug input for default locale (en) */
   slug?: InputMaybe<Scalars['String']['input']>;
-  variants?: InputMaybe<ProductVariantsUpdateManyInlineInput>;
+  variants?: InputMaybe<VariantUpdateManyInlineInput>;
 };
 
 export type ProductUpdateLocalizationDataInput = {
@@ -7606,102 +5781,6 @@ export type ProductUpsertWithNestedWhereUniqueInput = {
   data: ProductUpsertInput;
   /** Unique document search */
   where: ProductWhereUniqueInput;
-};
-
-export type ProductVariants = ProductColorVariant | ProductSizeColorVariant | ProductSizeVariant;
-
-export type ProductVariantsConnectInput = {
-  ProductColorVariant?: InputMaybe<ProductColorVariantConnectInput>;
-  ProductSizeColorVariant?: InputMaybe<ProductSizeColorVariantConnectInput>;
-  ProductSizeVariant?: InputMaybe<ProductSizeVariantConnectInput>;
-};
-
-export type ProductVariantsCreateInput = {
-  ProductColorVariant?: InputMaybe<ProductColorVariantCreateInput>;
-  ProductSizeColorVariant?: InputMaybe<ProductSizeColorVariantCreateInput>;
-  ProductSizeVariant?: InputMaybe<ProductSizeVariantCreateInput>;
-};
-
-export type ProductVariantsCreateManyInlineInput = {
-  /** Connect multiple existing ProductVariants documents */
-  connect?: InputMaybe<Array<ProductVariantsWhereUniqueInput>>;
-  /** Create and connect multiple existing ProductVariants documents */
-  create?: InputMaybe<Array<ProductVariantsCreateInput>>;
-};
-
-export type ProductVariantsCreateOneInlineInput = {
-  /** Connect one existing ProductVariants document */
-  connect?: InputMaybe<ProductVariantsWhereUniqueInput>;
-  /** Create and connect one ProductVariants document */
-  create?: InputMaybe<ProductVariantsCreateInput>;
-};
-
-export type ProductVariantsUpdateInput = {
-  ProductColorVariant?: InputMaybe<ProductColorVariantUpdateInput>;
-  ProductSizeColorVariant?: InputMaybe<ProductSizeColorVariantUpdateInput>;
-  ProductSizeVariant?: InputMaybe<ProductSizeVariantUpdateInput>;
-};
-
-export type ProductVariantsUpdateManyInlineInput = {
-  /** Connect multiple existing ProductVariants documents */
-  connect?: InputMaybe<Array<ProductVariantsConnectInput>>;
-  /** Create and connect multiple ProductVariants documents */
-  create?: InputMaybe<Array<ProductVariantsCreateInput>>;
-  /** Delete multiple ProductVariants documents */
-  delete?: InputMaybe<Array<ProductVariantsWhereUniqueInput>>;
-  /** Disconnect multiple ProductVariants documents */
-  disconnect?: InputMaybe<Array<ProductVariantsWhereUniqueInput>>;
-  /** Override currently-connected documents with multiple existing ProductVariants documents */
-  set?: InputMaybe<Array<ProductVariantsWhereUniqueInput>>;
-  /** Update multiple ProductVariants documents */
-  update?: InputMaybe<Array<ProductVariantsUpdateWithNestedWhereUniqueInput>>;
-  /** Upsert multiple ProductVariants documents */
-  upsert?: InputMaybe<Array<ProductVariantsUpsertWithNestedWhereUniqueInput>>;
-};
-
-export type ProductVariantsUpdateManyWithNestedWhereInput = {
-  ProductColorVariant?: InputMaybe<ProductColorVariantUpdateManyWithNestedWhereInput>;
-  ProductSizeColorVariant?: InputMaybe<ProductSizeColorVariantUpdateManyWithNestedWhereInput>;
-  ProductSizeVariant?: InputMaybe<ProductSizeVariantUpdateManyWithNestedWhereInput>;
-};
-
-export type ProductVariantsUpdateOneInlineInput = {
-  /** Connect existing ProductVariants document */
-  connect?: InputMaybe<ProductVariantsWhereUniqueInput>;
-  /** Create and connect one ProductVariants document */
-  create?: InputMaybe<ProductVariantsCreateInput>;
-  /** Delete currently connected ProductVariants document */
-  delete?: InputMaybe<Scalars['Boolean']['input']>;
-  /** Disconnect currently connected ProductVariants document */
-  disconnect?: InputMaybe<Scalars['Boolean']['input']>;
-  /** Update single ProductVariants document */
-  update?: InputMaybe<ProductVariantsUpdateWithNestedWhereUniqueInput>;
-  /** Upsert single ProductVariants document */
-  upsert?: InputMaybe<ProductVariantsUpsertWithNestedWhereUniqueInput>;
-};
-
-export type ProductVariantsUpdateWithNestedWhereUniqueInput = {
-  ProductColorVariant?: InputMaybe<ProductColorVariantUpdateWithNestedWhereUniqueInput>;
-  ProductSizeColorVariant?: InputMaybe<ProductSizeColorVariantUpdateWithNestedWhereUniqueInput>;
-  ProductSizeVariant?: InputMaybe<ProductSizeVariantUpdateWithNestedWhereUniqueInput>;
-};
-
-export type ProductVariantsUpsertWithNestedWhereUniqueInput = {
-  ProductColorVariant?: InputMaybe<ProductColorVariantUpsertWithNestedWhereUniqueInput>;
-  ProductSizeColorVariant?: InputMaybe<ProductSizeColorVariantUpsertWithNestedWhereUniqueInput>;
-  ProductSizeVariant?: InputMaybe<ProductSizeVariantUpsertWithNestedWhereUniqueInput>;
-};
-
-export type ProductVariantsWhereInput = {
-  ProductColorVariant?: InputMaybe<ProductColorVariantWhereInput>;
-  ProductSizeColorVariant?: InputMaybe<ProductSizeColorVariantWhereInput>;
-  ProductSizeVariant?: InputMaybe<ProductSizeVariantWhereInput>;
-};
-
-export type ProductVariantsWhereUniqueInput = {
-  ProductColorVariant?: InputMaybe<ProductColorVariantWhereUniqueInput>;
-  ProductSizeColorVariant?: InputMaybe<ProductSizeColorVariantWhereUniqueInput>;
-  ProductSizeVariant?: InputMaybe<ProductSizeVariantWhereUniqueInput>;
 };
 
 /** This contains a set of filters that can be used to compare values internally */
@@ -7880,10 +5959,9 @@ export type ProductWhereInput = {
   /** All values that are not contained in given list. */
   updatedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
   updatedBy?: InputMaybe<UserWhereInput>;
-  /** All values in which the union is empty */
-  variants_empty?: InputMaybe<Scalars['Boolean']['input']>;
-  /** Matches if the union contains at least one connection to the provided item to the filter */
-  variants_some?: InputMaybe<ProductVariantsWhereInput>;
+  variants_every?: InputMaybe<VariantWhereInput>;
+  variants_none?: InputMaybe<VariantWhereInput>;
+  variants_some?: InputMaybe<VariantWhereInput>;
 };
 
 /** The document in stages filter allows specifying a stage entry to cross compare the same document between different stages */
@@ -7965,30 +6043,6 @@ export type Query = {
   ordersConnection: OrderConnection;
   /** Retrieve a single product */
   product?: Maybe<Product>;
-  /** Retrieve a single productColorVariant */
-  productColorVariant?: Maybe<ProductColorVariant>;
-  /** Retrieve document version */
-  productColorVariantVersion?: Maybe<DocumentVersion>;
-  /** Retrieve multiple productColorVariants */
-  productColorVariants: Array<ProductColorVariant>;
-  /** Retrieve multiple productColorVariants using the Relay connection interface */
-  productColorVariantsConnection: ProductColorVariantConnection;
-  /** Retrieve a single productSizeColorVariant */
-  productSizeColorVariant?: Maybe<ProductSizeColorVariant>;
-  /** Retrieve document version */
-  productSizeColorVariantVersion?: Maybe<DocumentVersion>;
-  /** Retrieve multiple productSizeColorVariants */
-  productSizeColorVariants: Array<ProductSizeColorVariant>;
-  /** Retrieve multiple productSizeColorVariants using the Relay connection interface */
-  productSizeColorVariantsConnection: ProductSizeColorVariantConnection;
-  /** Retrieve a single productSizeVariant */
-  productSizeVariant?: Maybe<ProductSizeVariant>;
-  /** Retrieve document version */
-  productSizeVariantVersion?: Maybe<DocumentVersion>;
-  /** Retrieve multiple productSizeVariants */
-  productSizeVariants: Array<ProductSizeVariant>;
-  /** Retrieve multiple productSizeVariants using the Relay connection interface */
-  productSizeVariantsConnection: ProductSizeVariantConnection;
   /** Retrieve document version */
   productVersion?: Maybe<DocumentVersion>;
   /** Retrieve multiple products */
@@ -8015,12 +6069,28 @@ export type Query = {
   scheduledReleases: Array<ScheduledRelease>;
   /** Retrieve multiple scheduledReleases using the Relay connection interface */
   scheduledReleasesConnection: ScheduledReleaseConnection;
+  /** Retrieve a single sku */
+  sku?: Maybe<Sku>;
+  /** Retrieve document version */
+  skuVersion?: Maybe<DocumentVersion>;
+  /** Retrieve multiple skus */
+  skus: Array<Sku>;
+  /** Retrieve multiple skus using the Relay connection interface */
+  skusConnection: SkuConnection;
   /** Retrieve a single user */
   user?: Maybe<User>;
   /** Retrieve multiple users */
   users: Array<User>;
   /** Retrieve multiple users using the Relay connection interface */
   usersConnection: UserConnection;
+  /** Retrieve a single variant */
+  variant?: Maybe<Variant>;
+  /** Retrieve document version */
+  variantVersion?: Maybe<DocumentVersion>;
+  /** Retrieve multiple variants */
+  variants: Array<Variant>;
+  /** Retrieve multiple variants using the Relay connection interface */
+  variantsConnection: VariantConnection;
 };
 
 
@@ -8266,120 +6336,6 @@ export type QueryProductArgs = {
 };
 
 
-export type QueryProductColorVariantArgs = {
-  locales?: Array<Locale>;
-  stage?: Stage;
-  where: ProductColorVariantWhereUniqueInput;
-};
-
-
-export type QueryProductColorVariantVersionArgs = {
-  where: VersionWhereInput;
-};
-
-
-export type QueryProductColorVariantsArgs = {
-  after?: InputMaybe<Scalars['String']['input']>;
-  before?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  last?: InputMaybe<Scalars['Int']['input']>;
-  locales?: Array<Locale>;
-  orderBy?: InputMaybe<ProductColorVariantOrderByInput>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  stage?: Stage;
-  where?: InputMaybe<ProductColorVariantWhereInput>;
-};
-
-
-export type QueryProductColorVariantsConnectionArgs = {
-  after?: InputMaybe<Scalars['String']['input']>;
-  before?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  last?: InputMaybe<Scalars['Int']['input']>;
-  locales?: Array<Locale>;
-  orderBy?: InputMaybe<ProductColorVariantOrderByInput>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  stage?: Stage;
-  where?: InputMaybe<ProductColorVariantWhereInput>;
-};
-
-
-export type QueryProductSizeColorVariantArgs = {
-  locales?: Array<Locale>;
-  stage?: Stage;
-  where: ProductSizeColorVariantWhereUniqueInput;
-};
-
-
-export type QueryProductSizeColorVariantVersionArgs = {
-  where: VersionWhereInput;
-};
-
-
-export type QueryProductSizeColorVariantsArgs = {
-  after?: InputMaybe<Scalars['String']['input']>;
-  before?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  last?: InputMaybe<Scalars['Int']['input']>;
-  locales?: Array<Locale>;
-  orderBy?: InputMaybe<ProductSizeColorVariantOrderByInput>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  stage?: Stage;
-  where?: InputMaybe<ProductSizeColorVariantWhereInput>;
-};
-
-
-export type QueryProductSizeColorVariantsConnectionArgs = {
-  after?: InputMaybe<Scalars['String']['input']>;
-  before?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  last?: InputMaybe<Scalars['Int']['input']>;
-  locales?: Array<Locale>;
-  orderBy?: InputMaybe<ProductSizeColorVariantOrderByInput>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  stage?: Stage;
-  where?: InputMaybe<ProductSizeColorVariantWhereInput>;
-};
-
-
-export type QueryProductSizeVariantArgs = {
-  locales?: Array<Locale>;
-  stage?: Stage;
-  where: ProductSizeVariantWhereUniqueInput;
-};
-
-
-export type QueryProductSizeVariantVersionArgs = {
-  where: VersionWhereInput;
-};
-
-
-export type QueryProductSizeVariantsArgs = {
-  after?: InputMaybe<Scalars['String']['input']>;
-  before?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  last?: InputMaybe<Scalars['Int']['input']>;
-  locales?: Array<Locale>;
-  orderBy?: InputMaybe<ProductSizeVariantOrderByInput>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  stage?: Stage;
-  where?: InputMaybe<ProductSizeVariantWhereInput>;
-};
-
-
-export type QueryProductSizeVariantsConnectionArgs = {
-  after?: InputMaybe<Scalars['String']['input']>;
-  before?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  last?: InputMaybe<Scalars['Int']['input']>;
-  locales?: Array<Locale>;
-  orderBy?: InputMaybe<ProductSizeVariantOrderByInput>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  stage?: Stage;
-  where?: InputMaybe<ProductSizeVariantWhereInput>;
-};
-
-
 export type QueryProductVersionArgs = {
   where: VersionWhereInput;
 };
@@ -8515,6 +6471,44 @@ export type QueryScheduledReleasesConnectionArgs = {
 };
 
 
+export type QuerySkuArgs = {
+  locales?: Array<Locale>;
+  stage?: Stage;
+  where: SkuWhereUniqueInput;
+};
+
+
+export type QuerySkuVersionArgs = {
+  where: VersionWhereInput;
+};
+
+
+export type QuerySkusArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  locales?: Array<Locale>;
+  orderBy?: InputMaybe<SkuOrderByInput>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  stage?: Stage;
+  where?: InputMaybe<SkuWhereInput>;
+};
+
+
+export type QuerySkusConnectionArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  locales?: Array<Locale>;
+  orderBy?: InputMaybe<SkuOrderByInput>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  stage?: Stage;
+  where?: InputMaybe<SkuWhereInput>;
+};
+
+
 export type QueryUserArgs = {
   locales?: Array<Locale>;
   stage?: Stage;
@@ -8545,6 +6539,44 @@ export type QueryUsersConnectionArgs = {
   skip?: InputMaybe<Scalars['Int']['input']>;
   stage?: Stage;
   where?: InputMaybe<UserWhereInput>;
+};
+
+
+export type QueryVariantArgs = {
+  locales?: Array<Locale>;
+  stage?: Stage;
+  where: VariantWhereUniqueInput;
+};
+
+
+export type QueryVariantVersionArgs = {
+  where: VersionWhereInput;
+};
+
+
+export type QueryVariantsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  locales?: Array<Locale>;
+  orderBy?: InputMaybe<VariantOrderByInput>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  stage?: Stage;
+  where?: InputMaybe<VariantWhereInput>;
+};
+
+
+export type QueryVariantsConnectionArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  locales?: Array<Locale>;
+  orderBy?: InputMaybe<VariantOrderByInput>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  stage?: Stage;
+  where?: InputMaybe<VariantWhereInput>;
 };
 
 /** Representing a RGBA color value: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#rgb()_and_rgba() */
@@ -8583,7 +6615,7 @@ export type Review = Node & {
   publishedAt?: Maybe<Scalars['DateTime']['output']>;
   /** User that last published this document */
   publishedBy?: Maybe<User>;
-  rating?: Maybe<Scalars['Int']['output']>;
+  rating: Scalars['Int']['output'];
   scheduledIn: Array<ScheduledOperation>;
   /** System stage field */
   stage: Stage;
@@ -8666,7 +6698,7 @@ export type ReviewCreateInput = {
   headline: Scalars['String']['input'];
   name: Scalars['String']['input'];
   product?: InputMaybe<ProductCreateOneInlineInput>;
-  rating?: InputMaybe<Scalars['Int']['input']>;
+  rating: Scalars['Int']['input'];
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
 };
 
@@ -9261,7 +7293,7 @@ export type ScheduledOperationUpdatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
 
-export type ScheduledOperationAffectedDocument = Asset | Category | Collection | Currency | Order | OrderItem | Product | ProductColorVariant | ProductSizeColorVariant | ProductSizeVariant | Review;
+export type ScheduledOperationAffectedDocument = Asset | Category | Collection | Currency | Order | OrderItem | Product | Review | Sku | Variant;
 
 export type ScheduledOperationConnectInput = {
   /** Allow to specify document position in list of connected documents, will default to appending at end of list */
@@ -10185,6 +8217,446 @@ export type ScheduledReleaseWhereUniqueInput = {
   id?: InputMaybe<Scalars['ID']['input']>;
 };
 
+export type Sku = Node & {
+  /** The time the document was created */
+  createdAt: Scalars['DateTime']['output'];
+  /** User that created this document */
+  createdBy?: Maybe<User>;
+  /** Get the document in other stages */
+  documentInStages: Array<Sku>;
+  /** List of Sku versions */
+  history: Array<Version>;
+  /** The unique identifier */
+  id: Scalars['ID']['output'];
+  inStock?: Maybe<Scalars['Boolean']['output']>;
+  /** The time the document was published. Null on documents in draft stage. */
+  publishedAt?: Maybe<Scalars['DateTime']['output']>;
+  /** User that last published this document */
+  publishedBy?: Maybe<User>;
+  scheduledIn: Array<ScheduledOperation>;
+  size: Scalars['String']['output'];
+  /** System stage field */
+  stage: Stage;
+  /** The time the document was updated */
+  updatedAt: Scalars['DateTime']['output'];
+  /** User that last updated this document */
+  updatedBy?: Maybe<User>;
+};
+
+
+export type SkuCreatedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
+  locales?: InputMaybe<Array<Locale>>;
+};
+
+
+export type SkuDocumentInStagesArgs = {
+  includeCurrent?: Scalars['Boolean']['input'];
+  inheritLocale?: Scalars['Boolean']['input'];
+  stages?: Array<Stage>;
+};
+
+
+export type SkuHistoryArgs = {
+  limit?: Scalars['Int']['input'];
+  skip?: Scalars['Int']['input'];
+  stageOverride?: InputMaybe<Stage>;
+};
+
+
+export type SkuPublishedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
+  locales?: InputMaybe<Array<Locale>>;
+};
+
+
+export type SkuScheduledInArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  locales?: InputMaybe<Array<Locale>>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<ScheduledOperationWhereInput>;
+};
+
+
+export type SkuUpdatedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
+  locales?: InputMaybe<Array<Locale>>;
+};
+
+export type SkuConnectInput = {
+  /** Allow to specify document position in list of connected documents, will default to appending at end of list */
+  position?: InputMaybe<ConnectPositionInput>;
+  /** Document to connect */
+  where: SkuWhereUniqueInput;
+};
+
+/** A connection to a list of items. */
+export type SkuConnection = {
+  aggregate: Aggregate;
+  /** A list of edges. */
+  edges: Array<SkuEdge>;
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+};
+
+export type SkuCreateInput = {
+  cln97c3u01f7l01ul07pz11ig?: InputMaybe<VariantCreateManyInlineInput>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  inStock?: InputMaybe<Scalars['Boolean']['input']>;
+  size: Scalars['String']['input'];
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+export type SkuCreateManyInlineInput = {
+  /** Connect multiple existing Sku documents */
+  connect?: InputMaybe<Array<SkuWhereUniqueInput>>;
+  /** Create and connect multiple existing Sku documents */
+  create?: InputMaybe<Array<SkuCreateInput>>;
+};
+
+export type SkuCreateOneInlineInput = {
+  /** Connect one existing Sku document */
+  connect?: InputMaybe<SkuWhereUniqueInput>;
+  /** Create and connect one Sku document */
+  create?: InputMaybe<SkuCreateInput>;
+};
+
+/** An edge in a connection. */
+export type SkuEdge = {
+  /** A cursor for use in pagination. */
+  cursor: Scalars['String']['output'];
+  /** The item at the end of the edge. */
+  node: Sku;
+};
+
+/** Identifies documents */
+export type SkuManyWhereInput = {
+  /** Logical AND on all given filters. */
+  AND?: InputMaybe<Array<SkuWhereInput>>;
+  /** Logical NOT on all given filters combined by AND. */
+  NOT?: InputMaybe<Array<SkuWhereInput>>;
+  /** Logical OR on all given filters. */
+  OR?: InputMaybe<Array<SkuWhereInput>>;
+  /** Contains search across all appropriate fields. */
+  _search?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values greater than the given value. */
+  createdAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values greater than or equal the given value. */
+  createdAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values that are contained in given list. */
+  createdAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  /** All values less than the given value. */
+  createdAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values less than or equal the given value. */
+  createdAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
+  /** Any other value that exists and is not equal to the given value. */
+  createdAt_not?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values that are not contained in given list. */
+  createdAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  createdBy?: InputMaybe<UserWhereInput>;
+  documentInStages_every?: InputMaybe<SkuWhereStageInput>;
+  documentInStages_none?: InputMaybe<SkuWhereStageInput>;
+  documentInStages_some?: InputMaybe<SkuWhereStageInput>;
+  id?: InputMaybe<Scalars['ID']['input']>;
+  /** All values containing the given string. */
+  id_contains?: InputMaybe<Scalars['ID']['input']>;
+  /** All values ending with the given string. */
+  id_ends_with?: InputMaybe<Scalars['ID']['input']>;
+  /** All values that are contained in given list. */
+  id_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Any other value that exists and is not equal to the given value. */
+  id_not?: InputMaybe<Scalars['ID']['input']>;
+  /** All values not containing the given string. */
+  id_not_contains?: InputMaybe<Scalars['ID']['input']>;
+  /** All values not ending with the given string */
+  id_not_ends_with?: InputMaybe<Scalars['ID']['input']>;
+  /** All values that are not contained in given list. */
+  id_not_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** All values not starting with the given string. */
+  id_not_starts_with?: InputMaybe<Scalars['ID']['input']>;
+  /** All values starting with the given string. */
+  id_starts_with?: InputMaybe<Scalars['ID']['input']>;
+  inStock?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Any other value that exists and is not equal to the given value. */
+  inStock_not?: InputMaybe<Scalars['Boolean']['input']>;
+  publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values greater than the given value. */
+  publishedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values greater than or equal the given value. */
+  publishedAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values that are contained in given list. */
+  publishedAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  /** All values less than the given value. */
+  publishedAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values less than or equal the given value. */
+  publishedAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
+  /** Any other value that exists and is not equal to the given value. */
+  publishedAt_not?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values that are not contained in given list. */
+  publishedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  publishedBy?: InputMaybe<UserWhereInput>;
+  scheduledIn_every?: InputMaybe<ScheduledOperationWhereInput>;
+  scheduledIn_none?: InputMaybe<ScheduledOperationWhereInput>;
+  scheduledIn_some?: InputMaybe<ScheduledOperationWhereInput>;
+  size?: InputMaybe<Scalars['String']['input']>;
+  /** All values containing the given string. */
+  size_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values ending with the given string. */
+  size_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are contained in given list. */
+  size_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Any other value that exists and is not equal to the given value. */
+  size_not?: InputMaybe<Scalars['String']['input']>;
+  /** All values not containing the given string. */
+  size_not_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values not ending with the given string */
+  size_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are not contained in given list. */
+  size_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** All values not starting with the given string. */
+  size_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values starting with the given string. */
+  size_starts_with?: InputMaybe<Scalars['String']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values greater than the given value. */
+  updatedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values greater than or equal the given value. */
+  updatedAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values that are contained in given list. */
+  updatedAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  /** All values less than the given value. */
+  updatedAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values less than or equal the given value. */
+  updatedAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
+  /** Any other value that exists and is not equal to the given value. */
+  updatedAt_not?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values that are not contained in given list. */
+  updatedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  updatedBy?: InputMaybe<UserWhereInput>;
+};
+
+export type SkuOrderByInput =
+  | 'createdAt_ASC'
+  | 'createdAt_DESC'
+  | 'id_ASC'
+  | 'id_DESC'
+  | 'inStock_ASC'
+  | 'inStock_DESC'
+  | 'publishedAt_ASC'
+  | 'publishedAt_DESC'
+  | 'size_ASC'
+  | 'size_DESC'
+  | 'updatedAt_ASC'
+  | 'updatedAt_DESC';
+
+export type SkuUpdateInput = {
+  cln97c3u01f7l01ul07pz11ig?: InputMaybe<VariantUpdateManyInlineInput>;
+  inStock?: InputMaybe<Scalars['Boolean']['input']>;
+  size?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type SkuUpdateManyInlineInput = {
+  /** Connect multiple existing Sku documents */
+  connect?: InputMaybe<Array<SkuConnectInput>>;
+  /** Create and connect multiple Sku documents */
+  create?: InputMaybe<Array<SkuCreateInput>>;
+  /** Delete multiple Sku documents */
+  delete?: InputMaybe<Array<SkuWhereUniqueInput>>;
+  /** Disconnect multiple Sku documents */
+  disconnect?: InputMaybe<Array<SkuWhereUniqueInput>>;
+  /** Override currently-connected documents with multiple existing Sku documents */
+  set?: InputMaybe<Array<SkuWhereUniqueInput>>;
+  /** Update multiple Sku documents */
+  update?: InputMaybe<Array<SkuUpdateWithNestedWhereUniqueInput>>;
+  /** Upsert multiple Sku documents */
+  upsert?: InputMaybe<Array<SkuUpsertWithNestedWhereUniqueInput>>;
+};
+
+export type SkuUpdateManyInput = {
+  inStock?: InputMaybe<Scalars['Boolean']['input']>;
+  size?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type SkuUpdateManyWithNestedWhereInput = {
+  /** Update many input */
+  data: SkuUpdateManyInput;
+  /** Document search */
+  where: SkuWhereInput;
+};
+
+export type SkuUpdateOneInlineInput = {
+  /** Connect existing Sku document */
+  connect?: InputMaybe<SkuWhereUniqueInput>;
+  /** Create and connect one Sku document */
+  create?: InputMaybe<SkuCreateInput>;
+  /** Delete currently connected Sku document */
+  delete?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Disconnect currently connected Sku document */
+  disconnect?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Update single Sku document */
+  update?: InputMaybe<SkuUpdateWithNestedWhereUniqueInput>;
+  /** Upsert single Sku document */
+  upsert?: InputMaybe<SkuUpsertWithNestedWhereUniqueInput>;
+};
+
+export type SkuUpdateWithNestedWhereUniqueInput = {
+  /** Document to update */
+  data: SkuUpdateInput;
+  /** Unique document search */
+  where: SkuWhereUniqueInput;
+};
+
+export type SkuUpsertInput = {
+  /** Create document if it didn't exist */
+  create: SkuCreateInput;
+  /** Update document if it exists */
+  update: SkuUpdateInput;
+};
+
+export type SkuUpsertWithNestedWhereUniqueInput = {
+  /** Upsert data */
+  data: SkuUpsertInput;
+  /** Unique document search */
+  where: SkuWhereUniqueInput;
+};
+
+/** This contains a set of filters that can be used to compare values internally */
+export type SkuWhereComparatorInput = {
+  /** This field can be used to request to check if the entry is outdated by internal comparison */
+  outdated_to?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** Identifies documents */
+export type SkuWhereInput = {
+  /** Logical AND on all given filters. */
+  AND?: InputMaybe<Array<SkuWhereInput>>;
+  /** Logical NOT on all given filters combined by AND. */
+  NOT?: InputMaybe<Array<SkuWhereInput>>;
+  /** Logical OR on all given filters. */
+  OR?: InputMaybe<Array<SkuWhereInput>>;
+  /** Contains search across all appropriate fields. */
+  _search?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values greater than the given value. */
+  createdAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values greater than or equal the given value. */
+  createdAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values that are contained in given list. */
+  createdAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  /** All values less than the given value. */
+  createdAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values less than or equal the given value. */
+  createdAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
+  /** Any other value that exists and is not equal to the given value. */
+  createdAt_not?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values that are not contained in given list. */
+  createdAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  createdBy?: InputMaybe<UserWhereInput>;
+  documentInStages_every?: InputMaybe<SkuWhereStageInput>;
+  documentInStages_none?: InputMaybe<SkuWhereStageInput>;
+  documentInStages_some?: InputMaybe<SkuWhereStageInput>;
+  id?: InputMaybe<Scalars['ID']['input']>;
+  /** All values containing the given string. */
+  id_contains?: InputMaybe<Scalars['ID']['input']>;
+  /** All values ending with the given string. */
+  id_ends_with?: InputMaybe<Scalars['ID']['input']>;
+  /** All values that are contained in given list. */
+  id_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Any other value that exists and is not equal to the given value. */
+  id_not?: InputMaybe<Scalars['ID']['input']>;
+  /** All values not containing the given string. */
+  id_not_contains?: InputMaybe<Scalars['ID']['input']>;
+  /** All values not ending with the given string */
+  id_not_ends_with?: InputMaybe<Scalars['ID']['input']>;
+  /** All values that are not contained in given list. */
+  id_not_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** All values not starting with the given string. */
+  id_not_starts_with?: InputMaybe<Scalars['ID']['input']>;
+  /** All values starting with the given string. */
+  id_starts_with?: InputMaybe<Scalars['ID']['input']>;
+  inStock?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Any other value that exists and is not equal to the given value. */
+  inStock_not?: InputMaybe<Scalars['Boolean']['input']>;
+  publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values greater than the given value. */
+  publishedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values greater than or equal the given value. */
+  publishedAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values that are contained in given list. */
+  publishedAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  /** All values less than the given value. */
+  publishedAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values less than or equal the given value. */
+  publishedAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
+  /** Any other value that exists and is not equal to the given value. */
+  publishedAt_not?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values that are not contained in given list. */
+  publishedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  publishedBy?: InputMaybe<UserWhereInput>;
+  scheduledIn_every?: InputMaybe<ScheduledOperationWhereInput>;
+  scheduledIn_none?: InputMaybe<ScheduledOperationWhereInput>;
+  scheduledIn_some?: InputMaybe<ScheduledOperationWhereInput>;
+  size?: InputMaybe<Scalars['String']['input']>;
+  /** All values containing the given string. */
+  size_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values ending with the given string. */
+  size_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are contained in given list. */
+  size_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Any other value that exists and is not equal to the given value. */
+  size_not?: InputMaybe<Scalars['String']['input']>;
+  /** All values not containing the given string. */
+  size_not_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values not ending with the given string */
+  size_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are not contained in given list. */
+  size_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** All values not starting with the given string. */
+  size_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values starting with the given string. */
+  size_starts_with?: InputMaybe<Scalars['String']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values greater than the given value. */
+  updatedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values greater than or equal the given value. */
+  updatedAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values that are contained in given list. */
+  updatedAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  /** All values less than the given value. */
+  updatedAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values less than or equal the given value. */
+  updatedAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
+  /** Any other value that exists and is not equal to the given value. */
+  updatedAt_not?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values that are not contained in given list. */
+  updatedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  updatedBy?: InputMaybe<UserWhereInput>;
+};
+
+/** The document in stages filter allows specifying a stage entry to cross compare the same document between different stages */
+export type SkuWhereStageInput = {
+  /** Logical AND on all given filters. */
+  AND?: InputMaybe<Array<SkuWhereStageInput>>;
+  /** Logical NOT on all given filters combined by AND. */
+  NOT?: InputMaybe<Array<SkuWhereStageInput>>;
+  /** Logical OR on all given filters. */
+  OR?: InputMaybe<Array<SkuWhereStageInput>>;
+  /** This field contains fields which can be set as true or false to specify an internal comparison */
+  compareWithParent?: InputMaybe<SkuWhereComparatorInput>;
+  /** Specify the stage to compare with */
+  stage?: InputMaybe<Stage>;
+};
+
+/** References Sku record uniquely */
+export type SkuWhereUniqueInput = {
+  id?: InputMaybe<Scalars['ID']['input']>;
+};
+
 /** Stage system enumeration */
 export type Stage =
   /** The Draft is the default stage for all your content. */
@@ -10590,6 +9062,456 @@ export type UserWhereUniqueInput = {
   id?: InputMaybe<Scalars['ID']['input']>;
 };
 
+export type Variant = Node & {
+  color: Scalars['String']['output'];
+  /** The time the document was created */
+  createdAt: Scalars['DateTime']['output'];
+  /** User that created this document */
+  createdBy?: Maybe<User>;
+  /** Get the document in other stages */
+  documentInStages: Array<Variant>;
+  /** List of Variant versions */
+  history: Array<Version>;
+  /** The unique identifier */
+  id: Scalars['ID']['output'];
+  /** The time the document was published. Null on documents in draft stage. */
+  publishedAt?: Maybe<Scalars['DateTime']['output']>;
+  /** User that last published this document */
+  publishedBy?: Maybe<User>;
+  scheduledIn: Array<ScheduledOperation>;
+  skus: Array<Sku>;
+  /** System stage field */
+  stage: Stage;
+  /** The time the document was updated */
+  updatedAt: Scalars['DateTime']['output'];
+  /** User that last updated this document */
+  updatedBy?: Maybe<User>;
+};
+
+
+export type VariantCreatedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
+  locales?: InputMaybe<Array<Locale>>;
+};
+
+
+export type VariantDocumentInStagesArgs = {
+  includeCurrent?: Scalars['Boolean']['input'];
+  inheritLocale?: Scalars['Boolean']['input'];
+  stages?: Array<Stage>;
+};
+
+
+export type VariantHistoryArgs = {
+  limit?: Scalars['Int']['input'];
+  skip?: Scalars['Int']['input'];
+  stageOverride?: InputMaybe<Stage>;
+};
+
+
+export type VariantPublishedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
+  locales?: InputMaybe<Array<Locale>>;
+};
+
+
+export type VariantScheduledInArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  locales?: InputMaybe<Array<Locale>>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<ScheduledOperationWhereInput>;
+};
+
+
+export type VariantSkusArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  locales?: InputMaybe<Array<Locale>>;
+  orderBy?: InputMaybe<SkuOrderByInput>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<SkuWhereInput>;
+};
+
+
+export type VariantUpdatedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
+  locales?: InputMaybe<Array<Locale>>;
+};
+
+export type VariantConnectInput = {
+  /** Allow to specify document position in list of connected documents, will default to appending at end of list */
+  position?: InputMaybe<ConnectPositionInput>;
+  /** Document to connect */
+  where: VariantWhereUniqueInput;
+};
+
+/** A connection to a list of items. */
+export type VariantConnection = {
+  aggregate: Aggregate;
+  /** A list of edges. */
+  edges: Array<VariantEdge>;
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+};
+
+export type VariantCreateInput = {
+  cln97lquj1gr101t87zs21l06?: InputMaybe<ProductCreateManyInlineInput>;
+  color: Scalars['String']['input'];
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  skus?: InputMaybe<SkuCreateManyInlineInput>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+export type VariantCreateManyInlineInput = {
+  /** Connect multiple existing Variant documents */
+  connect?: InputMaybe<Array<VariantWhereUniqueInput>>;
+  /** Create and connect multiple existing Variant documents */
+  create?: InputMaybe<Array<VariantCreateInput>>;
+};
+
+export type VariantCreateOneInlineInput = {
+  /** Connect one existing Variant document */
+  connect?: InputMaybe<VariantWhereUniqueInput>;
+  /** Create and connect one Variant document */
+  create?: InputMaybe<VariantCreateInput>;
+};
+
+/** An edge in a connection. */
+export type VariantEdge = {
+  /** A cursor for use in pagination. */
+  cursor: Scalars['String']['output'];
+  /** The item at the end of the edge. */
+  node: Variant;
+};
+
+/** Identifies documents */
+export type VariantManyWhereInput = {
+  /** Logical AND on all given filters. */
+  AND?: InputMaybe<Array<VariantWhereInput>>;
+  /** Logical NOT on all given filters combined by AND. */
+  NOT?: InputMaybe<Array<VariantWhereInput>>;
+  /** Logical OR on all given filters. */
+  OR?: InputMaybe<Array<VariantWhereInput>>;
+  /** Contains search across all appropriate fields. */
+  _search?: InputMaybe<Scalars['String']['input']>;
+  color?: InputMaybe<Scalars['String']['input']>;
+  /** All values containing the given string. */
+  color_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values ending with the given string. */
+  color_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are contained in given list. */
+  color_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Any other value that exists and is not equal to the given value. */
+  color_not?: InputMaybe<Scalars['String']['input']>;
+  /** All values not containing the given string. */
+  color_not_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values not ending with the given string */
+  color_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are not contained in given list. */
+  color_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** All values not starting with the given string. */
+  color_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values starting with the given string. */
+  color_starts_with?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values greater than the given value. */
+  createdAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values greater than or equal the given value. */
+  createdAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values that are contained in given list. */
+  createdAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  /** All values less than the given value. */
+  createdAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values less than or equal the given value. */
+  createdAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
+  /** Any other value that exists and is not equal to the given value. */
+  createdAt_not?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values that are not contained in given list. */
+  createdAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  createdBy?: InputMaybe<UserWhereInput>;
+  documentInStages_every?: InputMaybe<VariantWhereStageInput>;
+  documentInStages_none?: InputMaybe<VariantWhereStageInput>;
+  documentInStages_some?: InputMaybe<VariantWhereStageInput>;
+  id?: InputMaybe<Scalars['ID']['input']>;
+  /** All values containing the given string. */
+  id_contains?: InputMaybe<Scalars['ID']['input']>;
+  /** All values ending with the given string. */
+  id_ends_with?: InputMaybe<Scalars['ID']['input']>;
+  /** All values that are contained in given list. */
+  id_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Any other value that exists and is not equal to the given value. */
+  id_not?: InputMaybe<Scalars['ID']['input']>;
+  /** All values not containing the given string. */
+  id_not_contains?: InputMaybe<Scalars['ID']['input']>;
+  /** All values not ending with the given string */
+  id_not_ends_with?: InputMaybe<Scalars['ID']['input']>;
+  /** All values that are not contained in given list. */
+  id_not_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** All values not starting with the given string. */
+  id_not_starts_with?: InputMaybe<Scalars['ID']['input']>;
+  /** All values starting with the given string. */
+  id_starts_with?: InputMaybe<Scalars['ID']['input']>;
+  publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values greater than the given value. */
+  publishedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values greater than or equal the given value. */
+  publishedAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values that are contained in given list. */
+  publishedAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  /** All values less than the given value. */
+  publishedAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values less than or equal the given value. */
+  publishedAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
+  /** Any other value that exists and is not equal to the given value. */
+  publishedAt_not?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values that are not contained in given list. */
+  publishedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  publishedBy?: InputMaybe<UserWhereInput>;
+  scheduledIn_every?: InputMaybe<ScheduledOperationWhereInput>;
+  scheduledIn_none?: InputMaybe<ScheduledOperationWhereInput>;
+  scheduledIn_some?: InputMaybe<ScheduledOperationWhereInput>;
+  skus_every?: InputMaybe<SkuWhereInput>;
+  skus_none?: InputMaybe<SkuWhereInput>;
+  skus_some?: InputMaybe<SkuWhereInput>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values greater than the given value. */
+  updatedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values greater than or equal the given value. */
+  updatedAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values that are contained in given list. */
+  updatedAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  /** All values less than the given value. */
+  updatedAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values less than or equal the given value. */
+  updatedAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
+  /** Any other value that exists and is not equal to the given value. */
+  updatedAt_not?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values that are not contained in given list. */
+  updatedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  updatedBy?: InputMaybe<UserWhereInput>;
+};
+
+export type VariantOrderByInput =
+  | 'color_ASC'
+  | 'color_DESC'
+  | 'createdAt_ASC'
+  | 'createdAt_DESC'
+  | 'id_ASC'
+  | 'id_DESC'
+  | 'publishedAt_ASC'
+  | 'publishedAt_DESC'
+  | 'updatedAt_ASC'
+  | 'updatedAt_DESC';
+
+export type VariantUpdateInput = {
+  cln97lquj1gr101t87zs21l06?: InputMaybe<ProductUpdateManyInlineInput>;
+  color?: InputMaybe<Scalars['String']['input']>;
+  skus?: InputMaybe<SkuUpdateManyInlineInput>;
+};
+
+export type VariantUpdateManyInlineInput = {
+  /** Connect multiple existing Variant documents */
+  connect?: InputMaybe<Array<VariantConnectInput>>;
+  /** Create and connect multiple Variant documents */
+  create?: InputMaybe<Array<VariantCreateInput>>;
+  /** Delete multiple Variant documents */
+  delete?: InputMaybe<Array<VariantWhereUniqueInput>>;
+  /** Disconnect multiple Variant documents */
+  disconnect?: InputMaybe<Array<VariantWhereUniqueInput>>;
+  /** Override currently-connected documents with multiple existing Variant documents */
+  set?: InputMaybe<Array<VariantWhereUniqueInput>>;
+  /** Update multiple Variant documents */
+  update?: InputMaybe<Array<VariantUpdateWithNestedWhereUniqueInput>>;
+  /** Upsert multiple Variant documents */
+  upsert?: InputMaybe<Array<VariantUpsertWithNestedWhereUniqueInput>>;
+};
+
+export type VariantUpdateManyInput = {
+  color?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type VariantUpdateManyWithNestedWhereInput = {
+  /** Update many input */
+  data: VariantUpdateManyInput;
+  /** Document search */
+  where: VariantWhereInput;
+};
+
+export type VariantUpdateOneInlineInput = {
+  /** Connect existing Variant document */
+  connect?: InputMaybe<VariantWhereUniqueInput>;
+  /** Create and connect one Variant document */
+  create?: InputMaybe<VariantCreateInput>;
+  /** Delete currently connected Variant document */
+  delete?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Disconnect currently connected Variant document */
+  disconnect?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Update single Variant document */
+  update?: InputMaybe<VariantUpdateWithNestedWhereUniqueInput>;
+  /** Upsert single Variant document */
+  upsert?: InputMaybe<VariantUpsertWithNestedWhereUniqueInput>;
+};
+
+export type VariantUpdateWithNestedWhereUniqueInput = {
+  /** Document to update */
+  data: VariantUpdateInput;
+  /** Unique document search */
+  where: VariantWhereUniqueInput;
+};
+
+export type VariantUpsertInput = {
+  /** Create document if it didn't exist */
+  create: VariantCreateInput;
+  /** Update document if it exists */
+  update: VariantUpdateInput;
+};
+
+export type VariantUpsertWithNestedWhereUniqueInput = {
+  /** Upsert data */
+  data: VariantUpsertInput;
+  /** Unique document search */
+  where: VariantWhereUniqueInput;
+};
+
+/** This contains a set of filters that can be used to compare values internally */
+export type VariantWhereComparatorInput = {
+  /** This field can be used to request to check if the entry is outdated by internal comparison */
+  outdated_to?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** Identifies documents */
+export type VariantWhereInput = {
+  /** Logical AND on all given filters. */
+  AND?: InputMaybe<Array<VariantWhereInput>>;
+  /** Logical NOT on all given filters combined by AND. */
+  NOT?: InputMaybe<Array<VariantWhereInput>>;
+  /** Logical OR on all given filters. */
+  OR?: InputMaybe<Array<VariantWhereInput>>;
+  /** Contains search across all appropriate fields. */
+  _search?: InputMaybe<Scalars['String']['input']>;
+  color?: InputMaybe<Scalars['String']['input']>;
+  /** All values containing the given string. */
+  color_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values ending with the given string. */
+  color_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are contained in given list. */
+  color_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Any other value that exists and is not equal to the given value. */
+  color_not?: InputMaybe<Scalars['String']['input']>;
+  /** All values not containing the given string. */
+  color_not_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values not ending with the given string */
+  color_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are not contained in given list. */
+  color_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** All values not starting with the given string. */
+  color_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values starting with the given string. */
+  color_starts_with?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values greater than the given value. */
+  createdAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values greater than or equal the given value. */
+  createdAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values that are contained in given list. */
+  createdAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  /** All values less than the given value. */
+  createdAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values less than or equal the given value. */
+  createdAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
+  /** Any other value that exists and is not equal to the given value. */
+  createdAt_not?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values that are not contained in given list. */
+  createdAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  createdBy?: InputMaybe<UserWhereInput>;
+  documentInStages_every?: InputMaybe<VariantWhereStageInput>;
+  documentInStages_none?: InputMaybe<VariantWhereStageInput>;
+  documentInStages_some?: InputMaybe<VariantWhereStageInput>;
+  id?: InputMaybe<Scalars['ID']['input']>;
+  /** All values containing the given string. */
+  id_contains?: InputMaybe<Scalars['ID']['input']>;
+  /** All values ending with the given string. */
+  id_ends_with?: InputMaybe<Scalars['ID']['input']>;
+  /** All values that are contained in given list. */
+  id_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Any other value that exists and is not equal to the given value. */
+  id_not?: InputMaybe<Scalars['ID']['input']>;
+  /** All values not containing the given string. */
+  id_not_contains?: InputMaybe<Scalars['ID']['input']>;
+  /** All values not ending with the given string */
+  id_not_ends_with?: InputMaybe<Scalars['ID']['input']>;
+  /** All values that are not contained in given list. */
+  id_not_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** All values not starting with the given string. */
+  id_not_starts_with?: InputMaybe<Scalars['ID']['input']>;
+  /** All values starting with the given string. */
+  id_starts_with?: InputMaybe<Scalars['ID']['input']>;
+  publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values greater than the given value. */
+  publishedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values greater than or equal the given value. */
+  publishedAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values that are contained in given list. */
+  publishedAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  /** All values less than the given value. */
+  publishedAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values less than or equal the given value. */
+  publishedAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
+  /** Any other value that exists and is not equal to the given value. */
+  publishedAt_not?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values that are not contained in given list. */
+  publishedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  publishedBy?: InputMaybe<UserWhereInput>;
+  scheduledIn_every?: InputMaybe<ScheduledOperationWhereInput>;
+  scheduledIn_none?: InputMaybe<ScheduledOperationWhereInput>;
+  scheduledIn_some?: InputMaybe<ScheduledOperationWhereInput>;
+  skus_every?: InputMaybe<SkuWhereInput>;
+  skus_none?: InputMaybe<SkuWhereInput>;
+  skus_some?: InputMaybe<SkuWhereInput>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values greater than the given value. */
+  updatedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values greater than or equal the given value. */
+  updatedAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values that are contained in given list. */
+  updatedAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  /** All values less than the given value. */
+  updatedAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values less than or equal the given value. */
+  updatedAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
+  /** Any other value that exists and is not equal to the given value. */
+  updatedAt_not?: InputMaybe<Scalars['DateTime']['input']>;
+  /** All values that are not contained in given list. */
+  updatedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  updatedBy?: InputMaybe<UserWhereInput>;
+};
+
+/** The document in stages filter allows specifying a stage entry to cross compare the same document between different stages */
+export type VariantWhereStageInput = {
+  /** Logical AND on all given filters. */
+  AND?: InputMaybe<Array<VariantWhereStageInput>>;
+  /** Logical NOT on all given filters combined by AND. */
+  NOT?: InputMaybe<Array<VariantWhereStageInput>>;
+  /** Logical OR on all given filters. */
+  OR?: InputMaybe<Array<VariantWhereStageInput>>;
+  /** This field contains fields which can be set as true or false to specify an internal comparison */
+  compareWithParent?: InputMaybe<VariantWhereComparatorInput>;
+  /** Specify the stage to compare with */
+  stage?: InputMaybe<Stage>;
+};
+
+/** References Variant record uniquely */
+export type VariantWhereUniqueInput = {
+  id?: InputMaybe<Scalars['ID']['input']>;
+};
+
 export type Version = {
   createdAt: Scalars['DateTime']['output'];
   id: Scalars['ID']['output'];
@@ -10681,28 +9603,73 @@ export type _SystemDateTimeFieldVariation =
   | 'combined'
   | 'localization';
 
+export type CartAddProductMutationVariables = Exact<{
+  orderId: Scalars['ID']['input'];
+  productId: Scalars['ID']['input'];
+  total: Scalars['Int']['input'];
+}>;
+
+
+export type CartAddProductMutation = { createOrderItem?: { id: string } | null };
+
+export type CartCreateMutationVariables = Exact<{ [key: string]: never; }>;
+
+
+export type CartCreateMutation = { createOrder?: { id: string, orderItems: Array<{ id: string, quantity: number, total: number, product?: { id: string, name: string, price: number } | null }> } | null };
+
+export type CartGetByIdQueryVariables = Exact<{
+  id: Scalars['ID']['input'];
+}>;
+
+
+export type CartGetByIdQuery = { order?: { id: string, orderItems: Array<{ id: string, quantity: number, total: number, product?: { id: string, name: string, price: number } | null }> } | null };
+
+export type CartFragment = { id: string };
+
+export type CartRemoveProductMutationVariables = Exact<{
+  itemId: Scalars['ID']['input'];
+}>;
+
+
+export type CartRemoveProductMutation = { deleteOrderItem?: { id: string } | null };
+
+export type CartSetProductQuantityMutationVariables = Exact<{
+  itemId: Scalars['ID']['input'];
+  quantity: Scalars['Int']['input'];
+}>;
+
+
+export type CartSetProductQuantityMutation = { updateOrderItem?: { quantity: number } | null };
+
 export type ProductGetByProductIdQueryVariables = Exact<{
   productId: Scalars['ID']['input'];
 }>;
 
 
-export type ProductGetByProductIdQuery = { product?: { id: string, name: string, description: string, price: number, categories: Array<{ name: string }>, images: Array<{ url: string }>, variants: Array<{ id: string, name: string, color: ProductColor, size: ProductSize } | {}> } | null };
-
-export type ProductListItemFragmentFragment = { id: string, name: string, description: string, price: number, categories: Array<{ name: string }>, images: Array<{ url: string }>, variants: Array<{ id: string, name: string, color: ProductColor, size: ProductSize } | {}> };
+export type ProductGetByProductIdQuery = { product?: { id: string, name: string, description: string, price: number, categories: Array<{ id: string, name: string }>, images: Array<{ url: string }>, variants: Array<{ id: string, color: string, skus: Array<{ id: string, size: string, inStock?: boolean | null }> }>, reviews: Array<{ id: string, name: string, headline: string, content: string, rating: number }> } | null };
 
 export type ProductsGetByCategorySlugQueryVariables = Exact<{
   slug: Scalars['String']['input'];
 }>;
 
 
-export type ProductsGetByCategorySlugQuery = { categories: Array<{ products: Array<{ id: string, name: string, description: string, price: number, categories: Array<{ name: string }>, images: Array<{ url: string }>, variants: Array<{ id: string, name: string, color: ProductColor, size: ProductSize } | {}> }> }> };
+export type ProductsGetByCategorySlugQuery = { categories: Array<{ products: Array<{ id: string, name: string, description: string, price: number, categories: Array<{ name: string, id: string }>, images: Array<{ url: string }> }> }> };
 
 export type ProductsGetByCollectionsSlugQueryVariables = Exact<{
   slug: Scalars['String']['input'];
 }>;
 
 
-export type ProductsGetByCollectionsSlugQuery = { collections: Array<{ products: Array<{ id: string, name: string, description: string, price: number, categories: Array<{ name: string }>, images: Array<{ url: string }>, variants: Array<{ id: string, name: string, color: ProductColor, size: ProductSize } | {}> }> }> };
+export type ProductsGetByCollectionsSlugQuery = { collections: Array<{ products: Array<{ id: string, name: string, description: string, price: number, categories: Array<{ name: string, id: string }>, images: Array<{ url: string }> }> }> };
+
+export type ProductsGetBySearchQueryVariables = Exact<{
+  first?: InputMaybe<Scalars['Int']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  nameContains?: InputMaybe<Scalars['String']['input']>;
+}>;
+
+
+export type ProductsGetBySearchQuery = { products: Array<{ id: string, name: string, description: string, price: number, categories: Array<{ name: string, id: string }>, images: Array<{ url: string }> }>, productsConnection: { aggregate: { count: number } } };
 
 export type ProductsGetListQueryVariables = Exact<{
   first?: InputMaybe<Scalars['Int']['input']>;
@@ -10710,14 +9677,40 @@ export type ProductsGetListQueryVariables = Exact<{
 }>;
 
 
-export type ProductsGetListQuery = { products: Array<{ id: string, name: string, description: string, price: number, categories: Array<{ name: string }>, images: Array<{ url: string }>, variants: Array<{ id: string, name: string, color: ProductColor, size: ProductSize } | {}> }>, productsConnection: { aggregate: { count: number } } };
+export type ProductsGetListQuery = { products: Array<{ id: string, name: string, description: string, price: number, categories: Array<{ name: string, id: string }>, images: Array<{ url: string }> }>, productsConnection: { aggregate: { count: number } } };
+
+export type ReviewCreateMutationVariables = Exact<{
+  headline: Scalars['String']['input'];
+  name: Scalars['String']['input'];
+  email: Scalars['String']['input'];
+  content: Scalars['String']['input'];
+  rating: Scalars['Int']['input'];
+  productId: Scalars['ID']['input'];
+}>;
+
+
+export type ReviewCreateMutation = { createReview?: { id: string, headline: string, name: string, email: string, content: string, rating: number } | null };
+
+export type ReviewGetByProductIdQueryVariables = Exact<{
+  productId: Scalars['ID']['input'];
+}>;
+
+
+export type ReviewGetByProductIdQuery = { product?: { reviews: Array<{ id: string, name: string, headline: string, content: string, rating: number }> } | null };
+
+export type ReviewPublishMutationVariables = Exact<{
+  newReviewId: Scalars['ID']['input'];
+}>;
+
+
+export type ReviewPublishMutation = { publishReview?: { id: string } | null };
 
 export type SuggestedProductsGetByProductIdQueryVariables = Exact<{
   productId: Scalars['ID']['input'];
 }>;
 
 
-export type SuggestedProductsGetByProductIdQuery = { products: Array<{ name: string, categories: Array<{ slug: string, products: Array<{ id: string, name: string, description: string, price: number, categories: Array<{ name: string }>, images: Array<{ url: string }>, variants: Array<{ id: string, name: string, color: ProductColor, size: ProductSize } | {}> }> }> }> };
+export type SuggestedProductsGetByProductIdQuery = { products: Array<{ name: string, categories: Array<{ slug: string, id: string, products: Array<{ id: string, name: string, description: string, price: number, categories: Array<{ name: string, id: string }>, images: Array<{ url: string }> }> }> }> };
 
 export class TypedDocumentString<TResult, TVariables>
   extends String
@@ -10733,114 +9726,153 @@ export class TypedDocumentString<TResult, TVariables>
     return this.value;
   }
 }
-export const ProductListItemFragmentFragmentDoc = new TypedDocumentString(`
-    fragment ProductListItemFragment on Product {
+export const CartFragmentDoc = new TypedDocumentString(`
+    fragment Cart on Order {
   id
-  name
-  description
-  categories(first: 1) {
-    name
+}
+    `, {"fragmentName":"Cart"}) as unknown as TypedDocumentString<CartFragment, unknown>;
+export const CartAddProductDocument = new TypedDocumentString(`
+    mutation CartAddProduct($orderId: ID!, $productId: ID!, $total: Int!) {
+  createOrderItem(
+    data: {quantity: 1, total: $total, product: {connect: {id: $productId}}, order: {connect: {id: $orderId}}}
+  ) {
+    id
   }
-  images(first: 1) {
-    url
-  }
-  price
-  variants {
-    ... on ProductSizeColorVariant {
+}
+    `) as unknown as TypedDocumentString<CartAddProductMutation, CartAddProductMutationVariables>;
+export const CartCreateDocument = new TypedDocumentString(`
+    mutation CartCreate {
+  createOrder(data: {total: 0, email: "konrad@wp.pl", stripeCheckoutId: "123"}) {
+    id
+    orderItems {
       id
-      name
-      color
-      size
+      quantity
+      total
+      product {
+        id
+        name
+        price
+      }
     }
   }
 }
-    `, {"fragmentName":"ProductListItemFragment"}) as unknown as TypedDocumentString<ProductListItemFragmentFragment, unknown>;
+    `) as unknown as TypedDocumentString<CartCreateMutation, CartCreateMutationVariables>;
+export const CartGetByIdDocument = new TypedDocumentString(`
+    query CartGetById($id: ID!) {
+  order(where: {id: $id}, stage: DRAFT) {
+    id
+    orderItems {
+      id
+      quantity
+      total
+      product {
+        id
+        name
+        price
+      }
+    }
+  }
+}
+    `) as unknown as TypedDocumentString<CartGetByIdQuery, CartGetByIdQueryVariables>;
+export const CartRemoveProductDocument = new TypedDocumentString(`
+    mutation CartRemoveProduct($itemId: ID!) {
+  deleteOrderItem(where: {id: $itemId}) {
+    id
+  }
+}
+    `) as unknown as TypedDocumentString<CartRemoveProductMutation, CartRemoveProductMutationVariables>;
+export const CartSetProductQuantityDocument = new TypedDocumentString(`
+    mutation CartSetProductQuantity($itemId: ID!, $quantity: Int!) {
+  updateOrderItem(where: {id: $itemId}, data: {quantity: $quantity}) {
+    quantity
+  }
+}
+    `) as unknown as TypedDocumentString<CartSetProductQuantityMutation, CartSetProductQuantityMutationVariables>;
 export const ProductGetByProductIdDocument = new TypedDocumentString(`
     query ProductGetByProductId($productId: ID!) {
   product(where: {id: $productId}) {
-    ...ProductListItemFragment
-  }
-}
-    fragment ProductListItemFragment on Product {
-  id
-  name
-  description
-  categories(first: 1) {
+    id
     name
-  }
-  images(first: 1) {
-    url
-  }
-  price
-  variants {
-    ... on ProductSizeColorVariant {
+    description
+    categories(first: 1) {
       id
       name
+    }
+    images(first: 1) {
+      url
+    }
+    price
+    variants {
+      id
       color
-      size
+      skus {
+        id
+        size
+        inStock
+      }
+    }
+    reviews {
+      id
+      name
+      headline
+      content
+      rating
     }
   }
-}`) as unknown as TypedDocumentString<ProductGetByProductIdQuery, ProductGetByProductIdQueryVariables>;
+}
+    `) as unknown as TypedDocumentString<ProductGetByProductIdQuery, ProductGetByProductIdQueryVariables>;
 export const ProductsGetByCategorySlugDocument = new TypedDocumentString(`
     query ProductsGetByCategorySlug($slug: String!) {
   categories(where: {slug: $slug}) {
     products(first: 10) {
-      ...ProductListItemFragment
+      id
+      name
+      description
+      categories(first: 1) {
+        name
+        id
+      }
+      images(first: 1) {
+        url
+      }
+      price
     }
   }
 }
-    fragment ProductListItemFragment on Product {
-  id
-  name
-  description
-  categories(first: 1) {
-    name
-  }
-  images(first: 1) {
-    url
-  }
-  price
-  variants {
-    ... on ProductSizeColorVariant {
-      id
-      name
-      color
-      size
-    }
-  }
-}`) as unknown as TypedDocumentString<ProductsGetByCategorySlugQuery, ProductsGetByCategorySlugQueryVariables>;
+    `) as unknown as TypedDocumentString<ProductsGetByCategorySlugQuery, ProductsGetByCategorySlugQueryVariables>;
 export const ProductsGetByCollectionsSlugDocument = new TypedDocumentString(`
     query ProductsGetByCollectionsSlug($slug: String!) {
   collections(where: {slug: $slug}) {
     products(first: 10) {
-      ...ProductListItemFragment
+      id
+      name
+      description
+      categories(first: 1) {
+        name
+        id
+      }
+      images(first: 1) {
+        url
+      }
+      price
     }
   }
 }
-    fragment ProductListItemFragment on Product {
-  id
-  name
-  description
-  categories(first: 1) {
+    `) as unknown as TypedDocumentString<ProductsGetByCollectionsSlugQuery, ProductsGetByCollectionsSlugQueryVariables>;
+export const ProductsGetBySearchDocument = new TypedDocumentString(`
+    query ProductsGetBySearch($first: Int, $skip: Int, $nameContains: String) {
+  products(first: $first, skip: $skip, where: {name_contains: $nameContains}) {
+    id
     name
-  }
-  images(first: 1) {
-    url
-  }
-  price
-  variants {
-    ... on ProductSizeColorVariant {
-      id
+    description
+    categories(first: 1) {
       name
-      color
-      size
+      id
     }
-  }
-}`) as unknown as TypedDocumentString<ProductsGetByCollectionsSlugQuery, ProductsGetByCollectionsSlugQueryVariables>;
-export const ProductsGetListDocument = new TypedDocumentString(`
-    query ProductsGetList($first: Int, $skip: Int) {
-  products(first: $first, skip: $skip) {
-    ...ProductListItemFragment
+    images(first: 1) {
+      url
+    }
+    price
   }
   productsConnection {
     aggregate {
@@ -10848,55 +9880,84 @@ export const ProductsGetListDocument = new TypedDocumentString(`
     }
   }
 }
-    fragment ProductListItemFragment on Product {
-  id
-  name
-  description
-  categories(first: 1) {
+    `) as unknown as TypedDocumentString<ProductsGetBySearchQuery, ProductsGetBySearchQueryVariables>;
+export const ProductsGetListDocument = new TypedDocumentString(`
+    query ProductsGetList($first: Int, $skip: Int) {
+  products(first: $first, skip: $skip) {
+    id
     name
-  }
-  images(first: 1) {
-    url
-  }
-  price
-  variants {
-    ... on ProductSizeColorVariant {
-      id
+    description
+    categories(first: 1) {
       name
-      color
-      size
+      id
+    }
+    images(first: 1) {
+      url
+    }
+    price
+  }
+  productsConnection {
+    aggregate {
+      count
     }
   }
-}`) as unknown as TypedDocumentString<ProductsGetListQuery, ProductsGetListQueryVariables>;
+}
+    `) as unknown as TypedDocumentString<ProductsGetListQuery, ProductsGetListQueryVariables>;
+export const ReviewCreateDocument = new TypedDocumentString(`
+    mutation ReviewCreate($headline: String!, $name: String!, $email: String!, $content: String!, $rating: Int!, $productId: ID!) {
+  createReview(
+    data: {headline: $headline, name: $name, email: $email, content: $content, rating: $rating, product: {connect: {id: $productId}}}
+  ) {
+    id
+    headline
+    name
+    email
+    content
+    rating
+  }
+}
+    `) as unknown as TypedDocumentString<ReviewCreateMutation, ReviewCreateMutationVariables>;
+export const ReviewGetByProductIdDocument = new TypedDocumentString(`
+    query ReviewGetByProductID($productId: ID!) {
+  product(where: {id: $productId}) {
+    reviews {
+      id
+      name
+      headline
+      content
+      rating
+    }
+  }
+}
+    `) as unknown as TypedDocumentString<ReviewGetByProductIdQuery, ReviewGetByProductIdQueryVariables>;
+export const ReviewPublishDocument = new TypedDocumentString(`
+    mutation ReviewPublish($newReviewId: ID!) {
+  publishReview(where: {id: $newReviewId}, to: PUBLISHED) {
+    id
+  }
+}
+    `) as unknown as TypedDocumentString<ReviewPublishMutation, ReviewPublishMutationVariables>;
 export const SuggestedProductsGetByProductIdDocument = new TypedDocumentString(`
     query SuggestedProductsGetByProductId($productId: ID!) {
   products(where: {id: $productId}) {
     name
     categories {
       slug
+      id
       products(where: {NOT: {id: $productId}}, first: 4) {
-        ...ProductListItemFragment
+        id
+        name
+        description
+        categories(first: 1) {
+          name
+          id
+        }
+        images(first: 1) {
+          url
+        }
+        price
       }
     }
   }
 }
-    fragment ProductListItemFragment on Product {
-  id
-  name
-  description
-  categories(first: 1) {
-    name
-  }
-  images(first: 1) {
-    url
-  }
-  price
-  variants {
-    ... on ProductSizeColorVariant {
-      id
-      name
-      color
-      size
-    }
-  }
-}`) as unknown as TypedDocumentString<SuggestedProductsGetByProductIdQuery, SuggestedProductsGetByProductIdQueryVariables>;
+    `) as unknown as TypedDocumentString<SuggestedProductsGetByProductIdQuery, SuggestedProductsGetByProductIdQueryVariables>;

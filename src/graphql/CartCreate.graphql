@@ -1,0 +1,17 @@
+mutation CartCreate {
+  createOrder(
+    data: { total: 0, email: "konrad@wp.pl", stripeCheckoutId: "123" }
+  ) {
+    id
+    orderItems {
+      id
+      quantity
+      total
+      product {
+        id
+        name
+        price
+      }
+    }
+  }
+}
