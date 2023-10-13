@@ -22,7 +22,7 @@ export const ActiveLink = <T extends string>({
   const classNames = clsx(className, isActive && activeClassName);
 
   return (
-    <Link href={href} className={classNames}>
+    <Link href={href} className={classNames} aria-current>
       {children}
     </Link>
   );
